@@ -384,12 +384,12 @@ class CTRT_Import extends EQdkp_Admin
 	        }
 			elseif ($memberWRSVal > 100)
 			{
-				$finalWR = ($memberWRSVal - 100) / 2;
+				$finalWR = ($memberWRSVal + 10 - 100) / 2;
 				$itemCost = $memberWRSVal - $finalWR;
 				return $itemCost; 
 			}
 			else
-				return $memberWRSVal;
+				return $memberWRSVal + 10;
         //}
     }
 
