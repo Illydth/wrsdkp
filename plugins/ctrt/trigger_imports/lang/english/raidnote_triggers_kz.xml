@@ -1,0 +1,75 @@
+<RaidNoteTriggers>
+<!-- Karazhan -->
+    <RaidNoteTrigger>
+        <trigger>Attumen the Huntsman</trigger>
+        <result>Attumen the Huntsman</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Dorothee</trigger>
+        <result>Dorothee</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Midnight</trigger>
+        <result>Midnight</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Moroes</trigger>
+        <result>Moroes</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Maiden of Virtue</trigger>
+        <result>Maiden of Virtue</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>The Curator</trigger>
+        <result>The Curator</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Terestian Illhoof</trigger>
+        <result>Terestian Illhoof</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Shade of Aran</trigger>
+        <result>Shade of Aran</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Netherspite</trigger>
+        <result>Netherspite</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Nightbane</trigger>
+        <result>Nightbane</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Prince Malchezaar</trigger>
+        <result>Prince Malchezaar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Chess Event</trigger>
+        <result>Chess Event</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>The Big Bad Wolf</trigger>
+        <result>Big Bad Wolf</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>The Crone</trigger>
+        <result>Wizard of Oz</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Julianne</trigger>
+        <result>Romulo and Julianne</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Romulo</trigger>
+        <result>Romulo and Julianne</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Echo of Medivh</trigger>
+        <result>Echo of Medivh</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Image of Medivh</trigger>
+        <result>Image of Medivh</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

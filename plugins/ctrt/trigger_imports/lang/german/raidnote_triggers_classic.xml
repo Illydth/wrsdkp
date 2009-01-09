@@ -1,0 +1,304 @@
+<!-- Raid Note Triggers German Translation for WoW Classic
+     Thanks to Lightstalker for the translations -->
+<RaidNoteTriggers>
+    <!-- Zul'Gurub -->
+    <RaidNoteTrigger>
+        <trigger>Bloodlord Mandokir</trigger>
+        <result>Blutfürst Mandokir</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gahz'ranka</trigger>
+        <result>Gahz'ranka</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gri'lek</trigger>
+        <result>Gri'lek</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Hazza'rah</trigger>
+        <result></result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Renataki</trigger>
+        <result></result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Wushoolay</trigger>
+        <result></result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Hakkar</trigger>
+        <result>Hakkar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priest Thekal</trigger>
+        <result>Hohepriester Thekal</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priest Venoxis</trigger>
+        <result>Hohepriester Venoxis</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priestess Arlokk</trigger>
+        <result>Hohepriesterin Arlokk</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priestess Jeklik</trigger>
+        <result>Hohepriesterin Jeklik</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priestess Mar'li</trigger>
+        <result>Hohepriesterin Mar'li</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Jin'do the Hexxer</trigger>
+        <result>Jin'do der Verhexer</result>
+    </RaidNoteTrigger>
+    <!-- Ruins of Ahn'Qiraj -->
+    <RaidNoteTrigger>
+        <trigger>Kurinnaxx</trigger>
+        <result>Kurinnaxx</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>General Rajaxx</trigger>
+        <result>General Rajaxx</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Moam</trigger>
+        <result>Moam</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Buru The Gorger</trigger>
+        <result>Buru der Verschlinger</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ayamiss the Hunter</trigger>
+        <result>Ayamiss der Jäger</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ossirian The Unscarred</trigger>
+        <result>Ossirian der Narbenlose</result>
+    </RaidNoteTrigger>
+    <!-- Temple of Ahn'Qiraj -->
+    <RaidNoteTrigger>
+        <trigger>The Prophet Skeram</trigger>
+        <result>Der Prophet Skeram</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Fankriss the Unyielding</trigger>
+        <result>Fankriss der Unnachgiebige</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Battleguard Sartura</trigger>
+        <result>Schlachtwache Sartura</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Princess Huhuran</trigger>
+        <result>Prinzessin Huhuran</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Twin Emperors</trigger>
+        <result>Imperator Vek'nilash</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>C'Thun</trigger>
+        <result>C'Thun</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Vem</trigger>
+        <result>Vem</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ouro</trigger>
+        <result>Ouro</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Princess Yauj</trigger>
+        <result>Prinzessin Yauj</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lord Kri</trigger>
+        <result>Lord Kri</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Viscidus</trigger>
+        <result>Viscidus</result>
+    </RaidNoteTrigger>
+    <!-- Worldbosses  -->
+    <RaidNoteTrigger>
+        <trigger>Azuregos</trigger>
+        <result>Azuregos</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Emeriss</trigger>
+        <result>Smariss</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ysondre</trigger>
+        <result>Ysondre</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Taerar</trigger>
+        <result>Taerar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lethon</trigger>
+        <result>Lethon</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Onyxia</trigger>
+        <result>Onyxia</result>
+    </RaidNoteTrigger>
+    <!-- Molten Core -->
+    <RaidNoteTrigger>
+        <trigger>Lucifron</trigger>
+        <result>Lucifron</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Magmadar</trigger>
+        <result>Magmadar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gehennas</trigger>
+        <result>Gehennas</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Garr</trigger>
+        <result>Garr</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Baron Geddon</trigger>
+        <result>Baron Geddon</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Shazzrah</trigger>
+        <result>Shazzrah</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Sulfuron Harbinger</trigger>
+        <result>Sulfuronherold</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Golemagg the Incinerator</trigger>
+        <result>Golemagg der Verbrenner</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Majordomo Executus</trigger>
+        <result>Majordomus Executus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ragnaros</trigger>
+        <result>Ragnaros</result>
+    </RaidNoteTrigger>
+    <!-- Blackwing Lair -->
+    <RaidNoteTrigger>
+        <trigger>Razorgore the Untamed</trigger>
+        <result>Razorgore der Ungezähmte</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Vaelastrasz the Corrupt</trigger>
+        <result>Vaelastrasz der Verdorbene</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Broodlord Lashlayer</trigger>
+        <result>Brutwächter Dreschbringer</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Firemaw</trigger>
+        <result>Feuerschwinge</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ebonroc</trigger>
+        <result>Schattenschwinge</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Flamegor</trigger>
+        <result>Flammenmaul</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Chromaggus</trigger>
+        <result>Chromaggus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Nefarian</trigger>
+        <result>Nefarian</result>
+    </RaidNoteTrigger>
+    <!-- Naxxramas -->
+    <RaidNoteTrigger>
+        <trigger>Patchwerk</trigger>
+        <result>Flickwerk</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Grobbulus</trigger>
+        <result>Grobbulus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gluth</trigger>
+        <result>Gluth</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Thaddius</trigger>
+        <result>Thaddius</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Instructor Razuvious</trigger>
+        <result>Instrukteur Razuvious</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gothik the Harvester</trigger>
+        <result>Gothik der Seelenjäger</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Highlord Mograine</trigger>
+        <result>Highlord Mograine</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Thane Korth'azz</trigger>
+        <result>Thane Korth'azz</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lady Blameux</trigger>
+        <result>Lady Blaumeux</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Sir Zeliek</trigger>
+        <result>Sir Zeliek</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Noth The Plaguebringer</trigger>
+        <result>Noth der Seuchenfürst</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Heigan the Unclean</trigger>
+        <result>Heigan der Unreine</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Loatheb</trigger>
+        <result>Loatheb</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Anub'Rekhan</trigger>
+        <result>Anub'Rekhan</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Grand Widow Faerlina</trigger>
+        <result>Großwitwe Faerlina</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Maexxna</trigger>
+        <result>Maexxna</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Sapphiron</trigger>
+        <result>Sapphiron</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Kel'Thuzad</trigger>
+        <result>Kel'Thuzad</result>
+    </RaidNoteTrigger>
+<!-- Random Notes -->
+    <RaidNoteTrigger>
+        <trigger>Trash mob</trigger>
+        <result>Trash Mob</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

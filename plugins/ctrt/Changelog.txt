@@ -1,0 +1,180 @@
+History:
+-----------------
+Version 1.16.13 (Changes by LoganFive)
+- Added missing race constant for Orc
+- Added Death Knight to class constants and English & German language files
+- Included support for the luna_wotlk templates
+
+Version 1.16.12 (Changes by LoganFive)
+- Fixed duplicate class name error when adding Ignored & Always Add items and ItemStats v1.6 is installed.
+
+Version 1.16.11 (Changes by LoganFive)
+- Added Zul'Aman event trigger import file for english
+- Added Zul'Aman & Tempest Keep Raid Note Triggers import files for english
+- Fixed missing menus in PHP4 installations
+- Fixed issue of missing item_ctrt_wowitemid column when plugin is upgraded without being uninstalled first
+
+Version 1.16.10 (Changes by LoganFive)
+- Importing single event or raid note trigger will now correctly import the trigger and result
+- Importing ignored items now works as intended
+- Exporting event triggers when none exist will not longer result in php error message
+- Fixed XML parser to handle German characters correctly
+
+Version 1.16.9 (Changes by LoganFive)
+- May now use WoW item ID or WoW item name when adding and importing Ignored & Always Add items
+- No longer uppercasing trigger names
+- Added support for tracking Item IDs. Access via ITEMS_TABLE.item_ctrt_itemid
+- included files are now fully pathed. should resolve missing links & open_base_dir issues
+- added support for EQdkpPlus m9wow3eq theme (thanks to Corgan)
+
+Version 1.16.8 (Changes by LoganFive)
+- Changed the file encoding of index.php to UTF-8, no BOM to resolve an issue where characters were being translated incorrectly.
+
+Version 1.16.7 (Changes by LoganFive)
+- Added check for EQdkp Plus when importing DKP string to allow for Item ID.
+
+Version 1.16.6 (Changes by LoganFive)
+- Can now import individual raide note triggers, event triggers, and aliases
+- Fixed problem where manage_ctrt.php would not load when PHP is configured with Safe Mode = on or
+with Openbase Dir Restrictions = on
+
+Version 1.16.5 (Changes by LoganFive)
+- Fixed an issue where German race & class names were being imported as Unknown
+
+Version 1.16.4 (Changes by LoganFive)
+- Fixed Blood Elfs being parsed as Unknown
+- Changed IgnoredLooter check such that if IngoreLooter is empty it will be ignored
+- Fixed issue where admin links did not point to the correct pages.
+
+Version 1.16.3 (Changes by LoganFive)
+- Updated reference to install directory in readme.txt to correctly read "install to plugins" directory
+- consolidated all trigger import files to their own directory called "trigger_imports"
+- added german translation for raidnote & event trigger xml files (thanks to Christian Staudte from the EQdkp Plus mailing list)
+- moved sample xml layout files to their own directory under docs
+- added additional raidnote triggers (thanks to growls from the eqdkp forums)
+
+Version 1.16.1 (Changes by LoganFive)
+- Merged Corgan's changes into base
+
+Version 1.16.0.0 (Changes by Corgan for EQDKP Plus)
+see SVN for Detail
+- renamed /language/deutsch into /language/german
+- Added Blood Elf to GetGermanRaceName()
+- make ctrt EQDKP Plus ready
+- Insert ItemID into the Item_table if EQDKP Plus is detected
+- Added the missing EQDKP Plus Styles
+
+Version 1.15.0 (Changes by LoganFive)
+- Moved all configuration parameters into admin panels
+- Added XML import / export for all triggers, own raids, alias, & items
+- Renamed deutsch language folder to german
+- added WoWMaevahEmpire templates
+- Renamed the config.php to config_ctrt.php to prevent collisions with existing files.
+
+Version 1.13.1 (Changes by Dazza)
+- Updated the admin menu links to work with EQDKP 1.3.2 (Note: this is not backwards compatible!)
+- Added EventTriggers and RaidNoteTriggers for raid instances released in the Burning Crusade
+
+Version 1.13 (Most of the changes were made by danbopes, cheers)
+- Fixed a problem with raids without loot (e.g. caused by blue drops)
+- Fixed a problem with $ctrt_set_AttendanceFilter = 2
+- Fixed a problem with arrays (hopefully no more array warnings)
+- Fixed some typos in the language files ("titel" to "title")
+- Removed duplicates from language files
+- Changed all of the $ctrt_settings to an array
+- Added a new $ctrt_settings['StartingDKP'] to add an adjustments for new members
+- Added a new $ctrt_settings['CreateStartRaid'] to create a start raid for people who use boss kill time
+- Changed the way a new member gets added into the database (will now update ranks/level/class)
+- Updated the lang_main.php file with new lines for updates for members
+
+Version 1.12 (Most of the changes were made by olgren, thx)
+- Modified process_parse to extract all attendees join and leave times rather than just 'first join', 'last join', and 'last leave'.
+- Used the newly extracted information to more accurately determine if someone was present.
+- Created a new 'filter' for 'boss kill time'. This new filter determines if an event or raid note matches a boss name. If it does the bosses kill time is used to determine if a player was present. This eliminates the problem of people joining a raid after the boss was killed but the loot hasn't been picked up yet.
+- Consolidated the new 'boss kill filter', 'loot time filter' into a single entry in the config.php.
+    $ctrt_set_AttendanceFilter = 2; // Sets the type of attendance filtering
+    0 = None ( if a person was in the raid they are added to all events )
+    1 = Loot Time ( if a person was in the raid when the loot attached to an event was picked up they are added to the event )
+    2 = Boss Kill Time ( if a person was in the raid when a boss attached to an event was killed they are added to the event )
+- Added a new $ctrt_set_DefaultDKPCost to the config.php. This sets the default dkp value of an item if no dkp was set when it was looted. Without this it's easy for an item to be added to the event with no dkp value in which case it's not added to the event when we 'insert raid(s)'.
+- There appear to be circumstances where an attendees join and leave times are the same. If this happened the attendee's 'leave time' was never populated due to a < check. This caused the importer to think the player never left. Updated this to <= check.
+- Added comments to the process_parser function.
+- The left admin menu will be shown always (This require a little change in the admin/index.php, see "Installation" part)
+- Fixed some in_array warnings
+- Fixed some "Wrong datatype for second argument" Warnigns
+- Changed the "Import DKP String" link from ./plugins/ctrt/ to ./plugins/ctrt/index.php
+- Added all bosses up to Naxxramas to config.php
+
+Version 1.11
+- Added $ctrt_set_AlwaysAddItems which allowes you to set some item IDs which should be always added (even if the quality is below $ctrt_set_MinItemQuality), e.g. the Onyxia Hide Backpack
+- Added $ctrt_set_LootTimeFilter which allowes you to enable/disable the filter that kicks out all players which haven't attended the raid at loot time
+- Added $ctrt_set_SkipRaidsWithEmptyNote which allowes you to skip any raids with an empty raid note
+- Added support for legendary items
+- Moved the link to the "Admin Panel Raids Link Box" (near the normal "Add Raid" Link)
+- Removed the CT_RaidTracker permission, now it's using the "Add Raid" permission
+- Moved some hardcoded texts to the language file
+- The function to prevent that a raid get added twince is now less tolerant (The raid time can now differ up to 3 mins +/- (was 30))
+- Fixed a bug where Player Aliases function dosn't work for the item buyer again
+
+Version 1.10
+- Fixed a  bug that sets all attendees to inactie instead of active (depends on your MySQL Version, you can fix it by edit the raid)
+- Raids with empty event won't get added any longer
+
+Version 1.09:
+- Invalid DKP strings won't get parsed anymore
+- The function to prevent that a raid get added twince is now more tolerant (The raid time can differ up to 30 mins +/-)
+- fixed the "in_array(): Wrong datatype for second argument" (line 555) bug
+- fixed a bug where Player Aliases function dosn't work for the item buyer
+- Fixed a bug where inactive players weren't set to active again
+- Fixed a bug where the DKP string couldn't get parsed because of some special chars
+- Fixed a bug that caused a buffer overflow when you use the itemlist.xml (Depends on the PHP settings)
+
+Version 1.08:
+- Fixed a bug where undead players race wasn't detected correctly (WoW's UnitRace function returns "Scourge" instead of "Undead", strange)
+- Fixed a bug where players class wasn't detected correctly if they are not level 60
+- Fixed the "Warning: Invalid argument supplied for foreach()" message on raids whithout loot
+
+Version 1.07:
+- Improved the "ConvertNames" function
+- Any actions get writen to the Admin Actions log now
+- If a raid has no attendees it won't get added now
+- The page titel will be shown correctly now
+- A little bug with the time parsing was fixed
+- Changed the name of the $set_* variables to $ctrt_set_*
+
+Version 1.06:
+- Modded CT_RaidTracker Version required changed to v1.20.3
+- The class/race/level of new Members will be set automatically now
+- Added $set_NewMemberDefaultRank to config.php, which allows you to set the default rank for new Members
+- A Bug where decimal values from the Loot notes (e.g. 1.5 DKP) weren't parsed correctly was fixed
+- A Checkbox which allowes you to choose if the "Item value/attendees" value should be added to the static values or not was added
+- Added $set_AddLootDkpValuesCheckbox to config.php, which allows you to set the default for the "Item value/attendees" checkbox
+- You can change the Raid Time now.
+- Changed the input Boxes' Layout to the EQdkp default
+
+Version 1.05:
+- EQdkp Version required changed to 1.3.0
+- Added an DKP Input Box to the Raids, if it is set, this value will be useed, if it's blank, Total Item Value/Attendees will be used
+- Unknown Attendees will be added now (Currently you have to set class/race/level manual)
+- Fixed a Bug where Items without Lootnote weren't parsed correctly
+- Added $set_ConvertNames to config.php, it allows to convert e.g. "Âvâtâr" to "Avatar"
+- Added $set_LootNoteEventTriggerCheck to config.php, which allows Event triggers in Loot notes
+- Added $set_PlayerAliases to config.php, which allows you to set Aliases for Twinks (e.g. if a Twink of the Mainchar helps out, but the Mainchar should get the DKP Points)
+- Added some code that can help with the "html_entity_decode" Error
+
+Version 1.04:
+- Added $set_IgnoredLooter to the config, which allowes you to set an Looter whitch gets ignored
+  (e.g. if you disenchant an item, default is set to "disenchanted")
+- Static DKP values for Events will be added now
+- Raids without loot are supported now
+- Loots with the DKP Value 0 will be added (If you don't want to add one, clear the input box)
+
+Version 1.03:
+- Fixed a Bug where Items with a ' weren't parsed correctly (e.g. Giantstalker's Belt)
+
+Version 1.02:
+- Fixed a Bug where Attendees weren't parsed correctly
+
+Version 1.01:
+- Initial release
+

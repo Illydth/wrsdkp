@@ -1,0 +1,46 @@
+<!-- Event Triggers German Translation for The Burning Crusade 
+     Thanks to Lightstalker for the translations -->
+<EventTriggers>
+<!-- Instances -->
+    <EventTrigger>
+        <trigger>Karazhan</trigger>
+        <result>Karazhan</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Gruul's Lair</trigger>
+        <result>Gruuls Unterschlupf</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Magtheridon's Lair</trigger>
+        <result>Magtheridons Hort</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Serpentshrine Lair</trigger>
+        <result>Höhle des Schlangenschreins</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Tempest Keep: The Eye</trigger>
+        <result>Das Auge</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Black Temple</trigger>
+        <result>Der Schwarze Tempel</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Battle of Mount Hyjal</trigger>
+        <result>Schlacht um den Berg Hyjal</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Zul'Aman</trigger>
+        <result>Zul'Aman</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Sunwell Plateau</trigger>
+        <result>Sunwell Plateau</result>
+    </EventTrigger>
+<!-- World Boss Encounters -->
+    <EventTrigger>
+        <trigger>Worldboss</trigger>
+        <result>Verschiedene Outland Bosse</result>
+    </EventTrigger>
+</EventTriggers>

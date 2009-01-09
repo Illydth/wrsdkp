@@ -1,0 +1,43 @@
+<RaidNoteTriggers>
+<!-- Molten Core -->
+    <RaidNoteTrigger>
+        <trigger>Lucifron</trigger>
+        <result>Lucifron</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Magmadar</trigger>
+        <result>Magmadar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gehennas</trigger>
+        <result>Gehennas</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Garr</trigger>
+        <result>Garr</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Geddon</trigger>
+        <result>Baron Geddon</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Shazzrah</trigger>
+        <result>Shazzrah</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Sulfuron</trigger>
+        <result>Sulfuron</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Golemagg</trigger>
+        <result>Golemagg</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Majordomo</trigger>
+        <result>Majordomo</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ragnaros</trigger>
+        <result>Ragnaros</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

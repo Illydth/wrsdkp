@@ -1,0 +1,52 @@
+<EventTriggers>
+<!-- Instances -->
+    <EventTrigger>
+        <trigger>Onyxia</trigger>
+        <result>Onyxia's Lair</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Molten Core</trigger>
+        <result>Molten Core</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Zul'Gurub</trigger>
+        <result>Zul'Gurub</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Blackwing Lair</trigger>
+        <result>Blackwing Lair</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Ahn'qiraj Ruins</trigger>
+        <result>Ruins of Ahn'Qiraj</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Ahn'qiraj Temple</trigger>
+        <result>Temple of Ahn'Qiraj</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Naxxramas</trigger>
+        <result>Naxxramas</result>
+    </EventTrigger>
+<!-- World Boss Encounters -->
+    <EventTrigger>
+        <trigger>Ysondre</trigger>
+        <result>World Bosses</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Lethon</trigger>
+        <result>World Bosses</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Taerar</trigger>
+        <result>World Bosses</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Emeriss</trigger>
+        <result>World Bosses</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Azuregos</trigger>
+        <result>World Bosses</result>
+    </EventTrigger>
+</EventTriggers>

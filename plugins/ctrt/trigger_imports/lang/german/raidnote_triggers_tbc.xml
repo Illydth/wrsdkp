@@ -1,0 +1,251 @@
+<!-- Raid Note Triggers German Translation for The Burning Crusade 
+     Thanks to Lightstalker for the translations -->
+<RaidNoteTriggers>
+    <!-- Worldbosses  -->
+    <RaidNoteTrigger>
+        <trigger>Doom Lord Kazzak</trigger>
+        <result>Verdammnislord Kazzak</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Doomwalker</trigger>
+        <result>Verdammniswandler</result>
+    </RaidNoteTrigger>
+    <!-- Karazhan -->
+    <RaidNoteTrigger>
+        <trigger>Attumen the Huntsman</trigger>
+        <result>Attumen der Jäger</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Moroes</trigger>
+        <result>Moroes</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Maiden of Virtue</trigger>
+        <result>Tugendhafte Maid</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>The Curator</trigger>
+        <result>Der Kurator</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Terestian Illhoof</trigger>
+        <result>Terestian Siechhuf</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Shade of Aran</trigger>
+        <result>Arans Schemen</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Netherspite</trigger>
+        <result>Nethergroll</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Nightbane</trigger>
+        <result>Schrecken der Nacht</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Prince Malchezaar</trigger>
+        <result>Prinz Malchezaar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Hyakiss the Lurker</trigger>
+        <result>Kellerbosse</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Rokad the Ravager</trigger>
+        <result>Kellerbosse</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Shadikith the Glider</trigger>
+        <result>Kellerbosse</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>The Big Bad Wolf</trigger>
+        <result>Oper Event</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>The Crone</trigger>
+        <result>Oper Event</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Romulo and Julianne</trigger>
+        <result>Oper Event</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Chess Event</trigger>
+        <result>Schach Event</result>
+    </RaidNoteTrigger>
+    <!-- Zul'Aman -->
+    <RaidNoteTrigger>
+        <trigger>Nalorakk</trigger>
+        <result>Nalorakk, Avatar des Bären</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Akil'zon</trigger>
+        <result>Akil'Zon, Avatar des Adlers</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Jan'alai</trigger>
+        <result>Jan'Alai, Avatar des Drachenfalken</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Halazzi</trigger>
+        <result>Halazzi, Avatar des Luchses</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Witch Doctor</trigger>
+        <result>Hexlord Malacrass</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Hex Lord Malacrass</trigger>
+        <result>Hexlord Malacrass</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Zul'jin</trigger>
+        <result>Zul'Jin</result>
+    </RaidNoteTrigger>
+    <!-- Gruul's Lair -->
+    <RaidNoteTrigger>
+        <trigger>High King Maulgar</trigger>
+        <result>Hochkönig Maulgar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gruul the Dragonkiller</trigger>
+        <result>Gruul der Drachenschlächter</result>
+    </RaidNoteTrigger>
+    <!-- Serpentshrine Cavern -->
+    <RaidNoteTrigger>
+        <trigger>Hydross the Unstable</trigger>
+        <result>Hydross der Unstete</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Leotheras the Blind</trigger>
+        <result>Leotheras der Blinde</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Fathom-Lord Karathress</trigger>
+        <result>Tiefenlord Karathress</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Morogrim Tidewalker</trigger>
+        <result>Morogrim Gezeitenwandler</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>The Lurker Below</trigger>
+        <result>Das Grauen aus der Tiefe</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lady Vashj</trigger>
+        <result>Lady Vashj</result>
+    </RaidNoteTrigger>
+    <!-- Magtheridon's Lair -->
+    <RaidNoteTrigger>
+        <trigger>Magtheridon</trigger>
+        <result>Magtheridon</result>
+    </RaidNoteTrigger>
+    <!-- Mount Hyjal -->
+    <RaidNoteTrigger>
+        <trigger>Rage Winterchill</trigger>
+        <result>Furor Winterfrost</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Anetheron</trigger>
+        <result>Anetheron</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Kaz'rogal</trigger>
+        <result>Kaz'rogal</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Azgalor</trigger>
+        <result>Azgalor</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Archimonde</trigger>
+        <result>Archimonde</result>
+    </RaidNoteTrigger>
+    <!-- Back Temple -->
+    <RaidNoteTrigger>
+        <trigger>High Warlord Naj'entus</trigger>
+        <result>Oberster Kriegsfürst Naj'entus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Supremus</trigger>
+        <result>Supremus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Shade of Akama</trigger>
+        <result>Akamas Schemen</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Teron Gorefiend</trigger>
+        <result>Teron Blutschatten</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gurtogg Bloodboil</trigger>
+        <result>Gurtogg Siedeblut</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Essence of Souls</trigger>
+        <result>Essenz der Seelen</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Mother Shahraz</trigger>
+        <result>Mutter Shahraz</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Illidari Council</trigger>
+        <result>Rat der Illidari</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Illidan Stormrage</trigger>
+        <result>Illidan Sturmgrimm</result>
+    </RaidNoteTrigger>
+  <!-- Tempest Keep: The Eye -->
+    <RaidNoteTrigger>
+        <trigger>Al'ar</trigger>
+        <result>Al'Ar der Phoenixgott</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Astromancer Solarian</trigger>
+        <result>Hochastromagier Solarian</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Void Reaver</trigger>
+        <result>Leerhäscher</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Kael'thas Sunstrider</trigger>
+        <result>Kael'thas Sonnenwanderer</result>
+    </RaidNoteTrigger>
+	<!-- Sunwell Plateau -->
+    <RaidNoteTrigger>
+        <trigger>Kalecgos</trigger>
+        <result>Kalecgos</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Brutallus</trigger>
+        <result>Brutallus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Felmyst</trigger>
+        <result>Felmyst</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Eredar Twins</trigger>
+        <result>Female Eredar Twins</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Entropius</trigger>
+        <result>M'uru</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Kil'jaeden</trigger>
+        <result>Kil'jaeden</result>
+    </RaidNoteTrigger>
+    <!-- Random Notes -->
+    <RaidNoteTrigger>
+        <trigger>Trash mob</trigger>
+        <result>Trash Mob</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

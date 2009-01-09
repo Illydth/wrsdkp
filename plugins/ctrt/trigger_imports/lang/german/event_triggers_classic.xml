@@ -1,0 +1,42 @@
+<!-- Event Triggers German Translation for WoW classic
+     Thanks to Lightstalker for the translations -->
+<EventTriggers>
+<!-- Instances -->
+    <EventTrigger>
+        <trigger>Molten Core</trigger>
+        <result>Der geschmolzene Kern</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Blackwing Lair</trigger>
+        <result>Pechschwingen Hort</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Zul'Gurub</trigger>
+        <result>Zul'Gurub</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Onyxia's Lair</trigger>
+        <result>Onyxias Hort</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Ahn'Qiraj Ruins</trigger>
+        <result>Ruinen von Ahn'Qiraj</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Ahn'Qiraj Temple</trigger>
+        <result>Tore von Ahn'Qiraj</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Naxxramas</trigger>
+        <result>Naxxramas</result>
+    </EventTrigger>
+<!-- World Boss Encounters -->
+    <EventTrigger>
+        <trigger>Emerald Dragon</trigger>
+        <result>Der smaragdgrüne Traum</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Worldboss</trigger>
+        <result>Verschiedene Bosse</result>
+    </EventTrigger>
+</EventTriggers>

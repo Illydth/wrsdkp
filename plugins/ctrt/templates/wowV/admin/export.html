@@ -1,0 +1,44 @@
+<!-- INCLUDE ../../../../templates/wowV/page_header.html -->
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+    <tr>
+        <th>
+          <div align="left">{L_PLUGIN_TITLE}</div>
+        </th>
+    </tr>
+    <tr>
+      <td>
+<form method="post" action="{F_CONFIG}" name="post">
+        <table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+            <tr class="row2">
+            <!-- BEGIN mainmenu_row -->
+                <td nowrap="nowrap" {mainmenu_row.CLASS}><div style="padding:.25em">{mainmenu_row.MENU}</div></td>
+            <!-- END mainmenu_row -->
+                <td nowrap="nowrap" width="100%">&nbsp;</td>
+            </tr>
+        </table>
+        <table border="0" cellspacing="1" cellpadding="2" class="borderless">
+            <tr class="row2">
+            <!-- BEGIN submenu_row -->
+                <td {submenu_row.CLASS}><div style="padding:0em .25em">{submenu_row.MENU}</div></td>
+            <!-- END submenu_row -->
+            </tr>
+        </table>
+        <br />
+<table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+    <tr class="row2">
+      <td>
+        <div style="padding:.1em">{L_HELP}</div>
+      </td>
+    </tr>
+    <tr>
+      <td >
+        <textarea name="export" rows="20" cols="60" id="export" style="width: 100%" class="input">{EXPORT}</textarea>
+      </td>
+    </tr>
+</table>
+</form>
+        </td>
+    </tr>
+</table>
+
+<!-- INCLUDE ../../../../templates/wowV/page_tail.html -->

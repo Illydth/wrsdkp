@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EventTriggers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\WebDesign\RaidAttendancePoints\rap\plugins\ctrt\xml\eventtriggers.xsd">
+	<EventTrigger>
+		<trigger>Kazzak</trigger>
+		<result>World Bosses</result>
+	</EventTrigger>
+</EventTriggers>

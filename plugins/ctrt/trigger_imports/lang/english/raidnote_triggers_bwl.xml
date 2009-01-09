@@ -1,0 +1,39 @@
+<RaidNoteTriggers>
+<!-- Blackwing Lair -->
+    <RaidNoteTrigger>
+        <trigger>Razorgore</trigger>
+        <result>Razorgore</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Vaelastrasz</trigger>
+        <result>Vaelastrasz</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Broodlord</trigger>
+        <result>Broodlord</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lashlayer</trigger>
+        <result>Broodlord</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Firemaw</trigger>
+        <result>Firemaw</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ebonroc</trigger>
+        <result>Ebonroc</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Flamegor</trigger>
+        <result>Flamegor</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Chromaggus</trigger>
+        <result>Chromaggus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Nefarian</trigger>
+        <result>Nefarian</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

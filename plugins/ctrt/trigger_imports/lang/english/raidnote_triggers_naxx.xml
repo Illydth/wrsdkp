@@ -1,0 +1,75 @@
+<RaidNoteTriggers>
+<!-- Naxxramas -->
+    <RaidNoteTrigger>
+        <trigger>Patchwerk</trigger>
+        <result>Patchwerk</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Grobbulus</trigger>
+        <result>Grobbulus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gluth</trigger>
+        <result>Gluth</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Thaddius</trigger>
+        <result>Thaddius</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Instructor Razuvious</trigger>
+        <result>Instructor Razuvious</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gothik the Harvester</trigger>
+        <result>Gothik the Harvester</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Highlord Mograine</trigger>
+        <result>Highlord Mograine</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Thane Korthazz</trigger>
+        <result>Thane Korthazz</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lady Blameux</trigger>
+        <result>Lady Blameux</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Sir Zeliek</trigger>
+        <result>Sir Zeliek</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Noth The Plaguebringer</trigger>
+        <result>Noth The Plaguebringer</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Heigan the Unclean</trigger>
+        <result>Heigan the Unclean</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Loatheb</trigger>
+        <result>Loatheb</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Anub'Rekhan</trigger>
+        <result>Anub'Rekhan</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Grand Widow Faerlina</trigger>
+        <result>Grand Widow Faerlina</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Maexxna</trigger>
+        <result>Maexxna</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Sapphiron</trigger>
+        <result>Sapphiron</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Kel'Thuzad</trigger>
+        <result>Kel'Thuzad</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

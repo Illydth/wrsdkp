@@ -1,0 +1,27 @@
+<RaidNoteTriggers>
+<!-- Serpentshrine Cavern -->
+    <RaidNoteTrigger>
+        <trigger>Hydross the Unstable</trigger>
+        <result>Hydross the Unstable</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Leotheras the Blind</trigger>
+        <result>Leotheras the Blind</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Fathom-Lord Karathress</trigger>
+        <result>Fathom-Lord Karathress</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Morogrim Tidewalker</trigger>
+        <result>Morogrim Tidewalker</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>The Lurker Below</trigger>
+        <result>The Lurker Below</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lady Vashj</trigger>
+        <result>Lady Vashj</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

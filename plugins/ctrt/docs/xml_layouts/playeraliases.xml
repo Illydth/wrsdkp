@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by garrett (sony) -->
+<PlayerAliases xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\WebDesign\RaidAttendancePoints\rap\plugins\ctrt\xml\playeraliases.xsd">
+	<PlayerAlias>
+		<alias>bank</alias>
+		<member>disenchanted</member>
+	</PlayerAlias>
+	<PlayerAlias>
+		<alias>Twink1ofMainChar1</alias>
+		<member>MainChar1</member>
+	</PlayerAlias>
+	<PlayerAlias>
+		<alias>Twink2ofMainChar1</alias>
+		<member>MainChar1</member>
+	</PlayerAlias>
+</PlayerAliases>

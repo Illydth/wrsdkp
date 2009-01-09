@@ -1,0 +1,27 @@
+<RaidNoteTriggers>
+<!-- Gruul's Lair -->
+    <RaidNoteTrigger>
+        <trigger>High King Maulgar</trigger>
+        <result>High King Maulgar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gruul</trigger>
+        <result>Gruul the Dragonkiller</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Blindeye</trigger>
+        <result>Blindeye the Seer</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Kiggler</trigger>
+        <result>Kiggler the Crazed</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Krosh</trigger>
+        <result>Krosh Firehand</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Olm</trigger>
+        <result>Olm the Summoner</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

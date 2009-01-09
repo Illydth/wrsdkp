@@ -1,0 +1,43 @@
+<RaidNoteTriggers>
+<!-- Zul'Gurub -->
+    <RaidNoteTrigger>
+        <trigger>Bloodlord</trigger>
+        <result>Bloodlord Mandokir</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gahz'ranka</trigger>
+        <result>Gahz'ranka</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gri'lek</trigger>
+        <result>Gri'lek</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Hakkar</trigger>
+        <result>Hakkar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priest Thekal</trigger>
+        <result>High Priest Thekal</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priest Venoxis</trigger>
+        <result>High Priest Venoxis</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priestess Arlokk</trigger>
+        <result>High Priestess Arlokk</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>High Priestess Jeklik</trigger>
+        <result>High Priestess Jeklik</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Mar'li</trigger>
+        <result>High Priestess Mar'li</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Jin'do the Hexxer</trigger>
+        <result>Jin'do the Hexxer</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

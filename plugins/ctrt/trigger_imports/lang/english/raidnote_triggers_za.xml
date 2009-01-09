@@ -1,0 +1,31 @@
+<!-- Zul'Aman -->
+<RaidNoteTriggers>
+  <RaidNoteTrigger>
+    <trigger>Nalorakk</trigger>
+    <result>Nalorakk</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>Akil'Zon</trigger>
+    <result>Akil'Zon</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>Jan'Alai</trigger>
+    <result>Jan'Alai</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>Halazzi</trigger>
+    <result>Halazzi</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>Witch Doctor</trigger>
+    <result>Witch Doctor</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>Hex Lord Malacrass</trigger>
+    <result>Hex Lord Malacrass</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>Zul'jin</trigger>
+    <result>Zul'jin</result>
+  </RaidNoteTrigger>
+</RaidNoteTriggers>

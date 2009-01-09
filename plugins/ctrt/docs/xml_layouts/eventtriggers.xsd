@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by garrett (sony) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="EventTriggers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EventTrigger" type="EventTriggerType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="EventTriggerType">
+		<xs:sequence>
+			<xs:element ref="trigger"/>
+			<xs:element ref="result"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="trigger" type="xs:string"/>
+	<xs:element name="result" type="xs:string"/>
+</xs:schema>

@@ -1,0 +1,92 @@
+<RaidNoteTriggers>
+<!-- Ruins of Ahn'Qiraj -->
+    <RaidNoteTrigger>
+        <trigger>Kurinnaxx</trigger>
+        <result>Kurinnaxx</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>General Rajaxx</trigger>
+        <result>General Rajaxx</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Moam</trigger>
+        <result>Moam</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Buru the Gorger</trigger>
+        <result>Buru the Gorger</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Rajaxx</trigger>
+        <result>General Rajaxx</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ayamiss the Hunter</trigger>
+        <result>Ayamiss the Hunter</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Buru</trigger>
+        <result>Buru the Gorger</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ayamiss</trigger>
+        <result>Ayamiss the Hunter</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ossirian the Unscarred</trigger>
+        <result>Ossirian the Unscarred</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ossirian</trigger>
+        <result>Ossirian the Unscarred</result>
+    </RaidNoteTrigger>
+<!-- Temple of Ahn'Qiraj -->
+    <RaidNoteTrigger>
+        <trigger>The Prophet Skeram</trigger>
+        <result>The Prophet Skeram</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Fankriss the Unyielding</trigger>
+        <result>Fankriss the Unyielding</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Battleguard Sartura</trigger>
+        <result>Battleguard Sartura</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Princess Huhuran</trigger>
+        <result>Princess Huhuran</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Emperor Vek'nilash</trigger>
+        <result>Twin Emperors</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Emperor Vek'lor</trigger>
+        <result>Twin Emperors</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>C'Thun</trigger>
+        <result>C'Thun</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Vem</trigger>
+        <result>Bug Trio</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ouro</trigger>
+        <result>Ouro the Sandworm</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Princess Yauj</trigger>
+        <result>Bug Trio</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lord Kri</trigger>
+        <result>Bug Trio</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Viscidus</trigger>
+        <result>Viscidus</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

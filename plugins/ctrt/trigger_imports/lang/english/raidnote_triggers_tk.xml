@@ -1,0 +1,19 @@
+<!-- Tempest Keep: The Eye -->
+<RaidNoteTriggers>
+  <RaidNoteTrigger>
+    <trigger>Al'ar</trigger>
+    <result>Al'ar</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>High Astromancer Solarian</trigger>
+    <result>High Astromancer Solarian</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>Void Reaver</trigger>
+    <result>Void Reaver</result>
+  </RaidNoteTrigger>
+  <RaidNoteTrigger>
+    <trigger>Kael'thas Sunstrider</trigger>
+    <result>Kael'thas Sunstrider</result>
+  </RaidNoteTrigger>
+</RaidNoteTriggers>

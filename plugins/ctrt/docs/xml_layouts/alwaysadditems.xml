@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by garrett (sony) -->
+<AlwaysAddItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\WebDesign\RaidAttendancePoints\rap\plugins\ctrt\xml\alwaysadditems.xsd">
+	<AlwaysAddItem>
+		<ItemID>17966</ItemID>
+		<name>Onyxia Hide Backpack</name>
+	</AlwaysAddItem>
+	<AlwaysAddItem>
+		<ItemID>20873</ItemID>
+		<name>Alabaster Idol</name>
+	</AlwaysAddItem>
+	<AlwaysAddItem>
+		<ItemID>17966</ItemID>
+		<name>Onyxia Scale Cloak</name>
+	</AlwaysAddItem>
+	<AlwaysAddItem>
+		<ItemID>20866</ItemID>
+	</AlwaysAddItem>
+</AlwaysAddItems>

@@ -1,0 +1,23 @@
+<RaidNoteTriggers>
+<!-- Mount Hyjal -->
+    <RaidNoteTrigger>
+        <trigger>Rage Winterchill</trigger>
+        <result>Rage Winterchill</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Anetheron</trigger>
+        <result>Anetheron</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Kaz'rogal</trigger>
+        <result>Kaz'rogal</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Azgalor</trigger>
+        <result>Azgalor</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Archimonde</trigger>
+        <result>Archimonde</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

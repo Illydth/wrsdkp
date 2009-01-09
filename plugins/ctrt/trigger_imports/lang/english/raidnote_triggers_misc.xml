@@ -1,0 +1,49 @@
+<RaidNoteTriggers>
+<!-- Random Notes -->
+    <RaidNoteTrigger>
+        <trigger>Random</trigger>
+        <result>Random Drop</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Trash Mob</trigger>
+        <result>Trash Mob</result>
+    </RaidNoteTrigger>
+<!-- Classic WoW -->
+  <!-- Onyxia -->
+    <RaidNoteTrigger>
+        <trigger>Onyxia</trigger>
+        <result>Onyxia</result>
+    </RaidNoteTrigger>
+  <!-- Worldbosses  -->
+    <RaidNoteTrigger>
+        <trigger>Azuregos</trigger>
+        <result>Azuregos</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Emeriss</trigger>
+        <result>Emeriss</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Ysondre</trigger>
+        <result>Ysondre</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Taerar</trigger>
+        <result>Taerar</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Lethon</trigger>
+        <result>Lethon</result>
+    </RaidNoteTrigger>
+<!-- The Burning Crusade -->
+  <!-- Kazzak -->
+    <RaidNoteTrigger>
+        <trigger>Kazzak</trigger>
+        <result>Kazzak</result>
+    </RaidNoteTrigger>
+  <!-- Magtheridon's Lair -->
+    <RaidNoteTrigger>
+        <trigger>Magtheridon</trigger>
+        <result>Magtheridon</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

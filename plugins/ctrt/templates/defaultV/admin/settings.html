@@ -1,0 +1,178 @@
+<!-- INCLUDE ../../../../templates/defaultV/page_header.html -->
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+	<tr>
+    	<th>
+    	  <div align="left">{L_PLUGIN_TITLE}</div>
+    	</th>
+	</tr>
+  	<tr>
+  		<td>
+<form method="post" action="{F_CONFIG}" name="post">
+		<table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+			<tr class="row2">
+            <!-- BEGIN mainmenu_row -->
+                <td nowrap="nowrap" {mainmenu_row.CLASS}><div style="padding:.25em">{mainmenu_row.MENU}</div></td>
+            <!-- END mainmenu_row -->
+                <td nowrap="nowrap" width="100%">&nbsp;</td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+			<tr class="row2">
+				<td nowrap="nowrap" width="100%">&nbsp;</td>
+				</tr>
+			</table>
+		<!-- IF L_UPDATE_SUCCESS -->
+		{L_UPDATE_SUCCESS}
+		<!-- ELSE -->
+		<br  />
+		<!-- ENDIF -->
+			<table width="100%" border="0" cellspacing="1" cellpadding="2">
+    <td nowrap="nowrap" class="row1">
+      <div align="right">
+        <label for="min_item_quality">{L_MIN_QUALITY}:</label>
+      </div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <select name="min_item_quality" class="input" id="min_item_quality">
+        <!-- BEGIN quality_row -->
+        <option value="{quality_row.VALUE}"{quality_row.SELECTED}>{quality_row.OPTION}</option>
+        <!-- END quality_row -->
+      </select>
+    </td>
+    <td class="row2">{L_MIN_QUALITY_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right">
+        <label for="add_loot_dkp">{L_ADD_LOOT_DKP}:</label>
+      </div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input name="add_loot_dkp" type="checkbox" id="add_loot_dkp" value="Y" {ADD_LOOT_DKP}  />
+    </td>
+    <td class="row2">{L_ADD_LOOT_DKP_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="ignored_looter">{L_IGNORED_LOOTER}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input type="text" name="ignored_looter" id="ignored_looter" size="20" maxlength="30" value="{IGNORED_LOOTER}" class="input" />
+    </td>
+    <td class="row2">{L_IGNORED_LOOTER_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right">
+        <label for="convert_names">{L_CONVERT_NAMES}:</label>
+      </div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input name="convert_names" type="checkbox" id="convert_names" value="Y" {CONVERT_NAMES}>
+    </td>
+    <td class="row2">{L_CONVERT_NAMES_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="event_trigger">{L_EVENT_TRIGGER}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input name="event_trigger" type="checkbox" id="event_trigger" value="Y" {EVENT_TRIGGER} />
+    </td>
+    <td class="row2">{L_EVENT_TRIGGER_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="default_rank_id">{L_DEFAULT_RANK}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <select name="default_rank_id" class="input" id="default_rank_id">
+        <!-- BEGIN rank_row -->
+        <option value="{rank_row.VALUE}"{rank_row.SELECTED}>{rank_row.OPTION}</option>
+        <!-- END rank_row -->
+      </select>
+    </td>
+    <td class="row2">{L_DEFAULT_RANK_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="attendance_filter">{L_ATTENDANCE_FILTER}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <select name="attendance_filter" class="input" id="attendance_filter">
+        <!-- BEGIN attendance_row -->
+        <option value="{attendance_row.VALUE}"{attendance_row.SELECTED}>{attendance_row.OPTION}</option>
+        <!-- END attendance_row -->
+		</select>
+    </td>
+    <td class="row2">{L_ATTENDANCE_FILTER_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="skip_empty_note_raids">{L_SKIP_RAIDS}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input name="skip_empty_note_raids" type="checkbox" id="skip_empty_note_raids" value="Y" {SKIP_EMPTY_NOTE_RAIDS} />
+    </td>
+    <td class="row2">{L_SKIP_RAIDS_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="default_dkp">{L_DEFAULT_DKP}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input type="text" name="default_dkp" id="default_dkp" size="2" maxlength="3" value="{DEFAULT_DKP}" class="input" />
+      {FV_DEFAULT_DKP}    </td>
+    <td class="row2">{L_DEFAULT_DKP_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="starting_dkp">{L_STARTING_DKP}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input type="text" name="starting_dkp" id="starting_dkp" size="2" maxlength="3" value="{STARTING_DKP}" class="input" />
+      {FV_STARTING_DKP}    </td>
+    <td class="row2">{L_STARTING_DKP_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="create_start_raid">{L_CREATE_START_RAID}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input name="create_start_raid" type="checkbox" id="create_start_raid" value="Y" {CREATE_START_RAID} />
+    </td>
+    <td class="row2">{L_CREATE_START_RAID_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="start_raid_dkp">{L_START_RAID_DKP}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input type="text" name="start_raid_dkp" id="start_raid_dkp" size="2" maxlength="3" value="{START_RAID_DKP}" class="input" />
+      {FV_START_RAID_DKP}    </td>
+    <td class="row2">{L_START_RAID_DKP_HELP}</td>
+  </tr>
+  <tr>
+    <td nowrap="nowrap" class="row1">
+      <div align="right"><label for="simulate">{L_SIMULATE}:</label></div>
+    </td>
+    <td nowrap="nowrap" class="row2">
+      <input name="simulate" type="checkbox" id="simulate" value="Y" {SIMULATE} />
+    </td>
+    <td class="row2">{L_SIMULATE_HELP}</td>
+  </tr>
+  <tr>
+    <th colspan="3" class="row1">
+<div style="padding:.25em;">
+    <input type="submit" name="submit" value="{L_UPDATE}" class="mainoption" />
+    <input type="reset" name="reset" value="{L_RESET}" class="liteoption" />
+</div>
+    </th>
+  </tr>
+</table>
+</form>
+		</td>
+	</tr>
+</table>
+	
+<!-- INCLUDE ../../../../templates/defaultV/page_tail.html -->

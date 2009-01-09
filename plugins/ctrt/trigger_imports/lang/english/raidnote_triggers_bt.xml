@@ -1,0 +1,39 @@
+<RaidNoteTriggers>
+<!-- Back Temple -->
+    <RaidNoteTrigger>
+        <trigger>High Warlord Naj'entus</trigger>
+        <result>High Warlord Naj'entus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Supremus</trigger>
+        <result>Supremus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Shade of Akama</trigger>
+        <result>Shade of Akama</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gorefiend</trigger>
+        <result>Teron Gorefiend</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Gurtogg Bloodboil</trigger>
+        <result>Gurtogg Bloodboil</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Reliquary of Souls</trigger>
+        <result>Reliquary of Souls</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Mother Shahraz</trigger>
+        <result>Mother Shahraz</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Illidari Council</trigger>
+        <result>Illidari Council</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Illidan Stormrage</trigger>
+        <result>Illidan Stormrage</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

@@ -1,0 +1,44 @@
+<EventTriggers>
+<!-- Instances -->
+    <EventTrigger>
+        <trigger>Karazhan</trigger>
+        <result>Karazhan</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Gruul's Lair</trigger>
+        <result>Gruul's Lair</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Serpentshrine Cavern</trigger>
+        <result>Serpentshrine Cavern</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Tempest Keep</trigger>
+        <result>Tempest Keep</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Magtheridon's Lair</trigger>
+        <result>Magtheridon's Lair</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Zul'Aman</trigger>
+        <result>Zul'Aman</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Mount Hyjal</trigger>
+        <result>Battle of Mount Hyjal</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Black Temple</trigger>
+        <result>Black Temple</result>
+    </EventTrigger>
+    <EventTrigger>
+        <trigger>Sunwell Plateau</trigger>
+        <result>Sunwell Plateau</result>
+    </EventTrigger>
+<!-- World Boss Encounters -->
+    <EventTrigger>
+        <trigger>Kazzak</trigger>
+        <result>World Bosses</result>
+    </EventTrigger>
+</EventTriggers>

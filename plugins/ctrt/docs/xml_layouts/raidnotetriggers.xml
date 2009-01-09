@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by garrett (sony) -->
+<RaidNoteTriggers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\WebDesign\RaidAttendancePoints\rap\plugins\ctrt\xml\raidnotetriggers.xsd">
+	<RaidNoteTrigger>
+		<trigger>Bloodlord</trigger>
+		<result>Bloodlord Mandokir</result>
+	</RaidNoteTrigger>
+	<RaidNoteTrigger>
+		<trigger>Azuregos</trigger>
+		<result>Azuregos</result>
+	</RaidNoteTrigger>
+	<RaidNoteTrigger>
+		<trigger>Kazzak</trigger>
+		<result>Kazzak</result>
+	</RaidNoteTrigger>
+</RaidNoteTriggers>

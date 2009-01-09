@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by garrett (sony) -->
+<AlwaysIgnoreItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\WebDesign\RaidAttendancePoints\rap\plugins\ctrt\xml\alwaysignoreitems.xsd">
+	<AlwaysIgnoreItem>
+		<ItemID>18562</ItemID>
+		<name>Elementium Ore (BwL)</name>
+	</AlwaysIgnoreItem>
+	<AlwaysIgnoreItem>
+		<ItemID>20725</ItemID>
+		<name>Nexus Crystal</name>
+	</AlwaysIgnoreItem>
+</AlwaysIgnoreItems>

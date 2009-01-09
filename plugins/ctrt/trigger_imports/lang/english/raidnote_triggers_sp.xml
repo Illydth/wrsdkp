@@ -1,0 +1,31 @@
+<RaidNoteTriggers>
+<!-- Sunwell Plateau -->
+    <RaidNoteTrigger>
+        <trigger>Kalecgos</trigger>
+        <result>Kalecgos</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Sathrovarr the Corruptor</trigger>
+        <result>Sathrovarr the Corruptor</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Brutallus</trigger>
+        <result>Brutallus</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Felmyst</trigger>
+        <result>Felmyst</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Eredar Twins</trigger>
+        <result>Eredar Twins</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Entropius</trigger>
+        <result>Entropius</result>
+    </RaidNoteTrigger>
+    <RaidNoteTrigger>
+        <trigger>Kil'jaeden</trigger>
+        <result>Kil'jaeden</result>
+    </RaidNoteTrigger>
+</RaidNoteTriggers>

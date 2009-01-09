@@ -1,0 +1,10 @@
+<ctrt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\WebDesign\RaidAttendancePoints\rap\plugins\ctrt\xml\ctrt_eventtrigger.xsd">
+	<EventTrigger>
+		<trigger>Kazzak</trigger>
+		<result>World Bosses</result>
+	</EventTrigger>
+	<EventTrigger>
+		<trigger>Azuregos</trigger>
+		<result>World Bosses</result>
+	</EventTrigger>
+</ctrt>

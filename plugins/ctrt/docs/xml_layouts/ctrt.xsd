@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by garrett (sony) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="RaidNoteTrigger"/>
+	<xs:element name="OwnRaid" type="OwnRaidType"/>
+	<xs:element name="PlayerAlias" type="PlayerAliasType"/>
+	<xs:element name="AlwaysAddItem" type="ItemType"/>
+	<xs:element name="AlwaysIgnoreItem" type="ItemType"/>
+	<xs:element name="EventTrigger" type="EventTriggerType"/>
+	<xs:element name="ctrt">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RaidNoteTrigger" type="RaidNoteTriggerType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="PlayerAlias" type="PlayerAliasType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="OwnRaid" type="OwnRaidType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="AlwaysIgnoreItem" type="ItemType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="EventTrigger" type="EventTriggerType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="AlwaysAddItem" type="ItemType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="EventTriggerType">
+		<xs:sequence>
+			<xs:element ref="trigger"/>
+			<xs:element ref="result"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RaidNoteTriggerType">
+		<xs:sequence>
+			<xs:element ref="trigger"/>
+			<xs:element ref="result"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OwnRaidType">
+		<xs:sequence>
+			<xs:element ref="name"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PlayerAliasType">
+		<xs:sequence>
+			<xs:element ref="name"/>
+			<xs:element ref="alias"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ItemType">
+		<xs:sequence>
+			<xs:element ref="ItemID"/>
+			<xs:element ref="name" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="trigger" type="xs:string"/>
+	<xs:element name="result" type="xs:string"/>
+	<xs:element name="name" type="xs:string"/>
+	<xs:element name="alias" type="xs:string"/>
+	<xs:element name="ItemID" type="xs:unsignedInt"/>
+</xs:schema>

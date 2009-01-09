@@ -1,0 +1,65 @@
+<!-- INCLUDE ../../../../templates/WoWMoonclaw01/page_header.html -->
+<table width="100%" border="0" cellspacing="1" cellpadding="2">
+    <tr>
+        <th>
+          <div align="left">{L_PLUGIN_TITLE}</div>
+        </th>
+    </tr>
+    <tr>
+      <td>
+<form method="post" action="{F_CONFIG}" name="post">
+<input type="hidden" name="id" value="{V_ID}" />
+<input type="hidden" name="compare_ids[]" value="{ID}" />
+		<table width="100%" border="0" cellspacing="1" cellpadding="2" class="borderless">
+			<tr class="row2">
+            <!-- BEGIN mainmenu_row -->
+                <td nowrap="nowrap" {mainmenu_row.CLASS}><div style="padding:.25em">{mainmenu_row.MENU}</div></td>
+            <!-- END mainmenu_row -->
+                <td nowrap="nowrap" width="100%">&nbsp;</td>
+			</tr>
+		</table>
+        <table border="0" cellspacing="1" cellpadding="2" class="borderless">
+            <tr class="row2">
+            <!-- BEGIN submenu_row -->
+                <td nowrap="nowrap" {submenu_row.CLASS}><div style="padding:0em .25em">{submenu_row.MENU}</div></td>
+            <!-- END submenu_row -->
+                <td nowrap="nowrap" width="100%">&nbsp;</td>
+            </tr>
+        </table>
+        <br />
+    <table width="100%" border="0" cellpadding="2" cellspacing="1" class="borderless">
+    <tr class="row2">
+      <td colspan="3">
+        <div style="padding:.1em">{L_HELP}</div>
+      </td>
+    </tr>
+    <tr>
+      <td width="80" nowrap="nowrap" class="row1">
+        <div align="right">
+          <label for="own_raid_name">{L_OWN_RAID}:</label>
+        </div>
+      </td>
+      <td nowrap="nowrap" class="row2">
+        <input type="text" name="own_raid_name" id="own_raid_name" size="20" maxlength="30" value="{NAME}" class="input" />
+        {FV_NAME} </td>
+      <td class="row2">{L_HELP_NAME}</td>
+    </tr>
+  <tr>
+    <td colspan="3">
+      <div align="center" style="padding:.25em;">
+        <!-- IF S_ADD -->
+        <input type="submit" name="add" value="{L_ADD}" class="mainoption" />
+        <!-- ELSE -->
+        <input type="submit" name="update" value="{L_UPDATE}" class="mainoption" />
+        <!-- ENDIF -->
+        <input type="reset" name="reset" value="{L_RESET}" class="liteoption" />
+        </div>
+    </td>
+  </tr>
+</table>
+</form>
+        </td>
+    </tr>
+</table>
+
+<!-- INCLUDE ../../../../templates/WoWMoonclaw01/page_tail.html -->
