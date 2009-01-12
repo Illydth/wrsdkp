@@ -34,8 +34,8 @@
   }
  }
 
-class LUA_Import extends EQdkp_Admin {
-
+class LUA_Import extends EQdkp_Admin 
+{
  function lua_import() 
  {
    global $db, $eqdkp, $user, $tpl, $pm;
