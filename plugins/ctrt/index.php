@@ -571,6 +571,7 @@ class CTRT_Import extends EQdkp_Admin
         $allevents = array();
         $allraidattendees = array();
         $itemidtoname = array();
+		$dkpinfo = array();
         $adata = $this->xml2array($_POST['log']);
         $globalevent = $this->GetRaidEventFromString($adata['RaidInfo']['note']);
         if ($globalevent == "Unknown Event")
@@ -582,9 +583,12 @@ class CTRT_Import extends EQdkp_Admin
         # Set Join Times for Players
         if($allforeachdata = @array_shift($adata['RaidInfo'][0]['Join']))
         {
-            foreach($allforeachdata as $playerdata)
+        	foreach($allforeachdata as $playerdata)
             {
-                # Convert Names, Set Timestamp, Initialize the Player Data
+		        echo "<pre>";
+		        print_r($playerdata);
+		        echo "</pre>";
+            	# Convert Names, Set Timestamp, Initialize the Player Data
                 $playerdata['time'] = $this->ConvertTimestringToTimestamp($playerdata['time']);
                 if(!empty($this->_ctrt_settings['PlayerAliases'][$playerdata['player']]))
                 {
@@ -603,8 +607,31 @@ class CTRT_Import extends EQdkp_Admin
                 if(!empty($playerdata['race']) && empty($allattendees[$playerdata['player']]['race'])) { $allattendees[$playerdata['player']]['race'] = $this->GetRaceIdByRaceName($playerdata['race']); }
                 if(!empty($playerdata['class']) && empty($allattendees[$playerdata['player']]['class'])) { $allattendees[$playerdata['player']]['class'] = $this->GetClassIdByClassNameLevel($playerdata['class'], $playerdata['level']); }
                 if(!empty($playerdata['level']) && $allattendees[$playerdata['player']]['level'] < $playerdata['level']) { $allattendees[$playerdata['player']]['level'] = $playerdata['level']; }
-
-                    # Add the Join Time to the array of leave/join times
+            	
+                // Check if Player Note exists and contains a "WRS" string.  
+                // If so this should be the WRS used for that player for the night.
+                if(isset($playerdata['note']) && !empty($playerdata['note']) && 
+                	empty($allattendees[$playerdata['player']]['note'])) 
+                { 
+                	$allattendees[$playerdata['player']]['note'] = $playerdata['note'];
+                	//@@@ If note contains "WRS" as value, set player WRS field. 
+	                if(!empty($playerdata['note']))
+	            	{
+                		echo "<br>*** PLAYER NOTE SET, PARSE FOR WR. ***";
+	            		preg_match("\([\\d\\.]+)\ WRS", $playerdata['note'], $dkpinfo);
+		                echo "<br>Match Found, in note: " .$playerdata['note']. " info: " . $dkpinfo[1];
+		                if(!empty($dkpinfo[1]))
+		                {
+							echo "<br>Setting allattendees for WRS note.";
+		                	$allattendees[$playerdata['player']]['dkp'] = $dkpinfo[1];
+		                }
+	            	}
+                }
+                //echo "<pre>";
+				//print_r($allattendees);
+				//echo "</pre>";
+            	
+                # Add the Join Time to the array of leave/join times
                     if(empty($allattendees[$playerdata['player']]['time'])) $allattendees[$playerdata['player']]['time'] = array();
                     $allattendees[$playerdata['player']]['time'][]['join'] = $playerdata['time'];
                 }
@@ -679,13 +706,14 @@ class CTRT_Import extends EQdkp_Admin
             #$allloot[$i]['dkp'] = $this->_ctrt_settings['DefaultDKPCost'];
             if(!empty($lootdata['Note']))
             {
-                preg_match("/([\d\.]+) DKP/", $lootdata['Note'], $dkpinfo);
+                preg_match("/([\d\.]+) WRS/", $lootdata['Note'], $dkpinfo);
                 if(!empty($dkpinfo[1]) || $dkpinfo[1] == "0")
                 {
                     $allloot[$i]['dkp'] = $dkpinfo[1];
                 }
             }
-
+            
+            //print_r($allattendees);
             # If attendance mode is not mode 2 then we set attendance by loot time
             if ( $this->_ctrt_settings['AttendanceFilter'] != CTRT_AF_BOSS_KILL )
             {
@@ -696,7 +724,10 @@ class CTRT_Import extends EQdkp_Admin
                     if( $this->_ctrt_settings['AttendanceFilter'] == CTRT_AF_NONE )
                     {
                         $allloot[$i]['attendees'][] = $player;
-                        $allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
+                        if (isset($player['dkp']))
+                        	$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $player['dkp'];	
+ 						else                       
+ 							$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
                         continue;
                     }
 
@@ -706,8 +737,10 @@ class CTRT_Import extends EQdkp_Admin
                         if( $inraid['join'] <= $allloot[$i]['time'] && ( $inraid['leave'] >= $allloot[$i]['time'] || empty($inraid['leave']) ) )
                         {
                             $allloot[$i]['attendees'][] = $player;
-                            $allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
-                        }
+	                        if (isset($player['dkp']))
+	                        	$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $player['dkp'];	
+	 						else                       
+	 							$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;                                                    }
                     }
                 }
             }
@@ -749,8 +782,10 @@ class CTRT_Import extends EQdkp_Admin
                             if( $inraid['join'] <= $bosskilltime && ( $inraid['leave'] >= $bosskilltime || empty($inraid['leave']) ) )
                             {
                                 $allloot[$i]['attendees'][] = $player;
-                                $allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
-                            }
+		                        if (isset($player['dkp']))
+		                        	$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $player['dkp'];	
+		 						else                       
+		 							$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;                                                            }
                         }
                     }
                 }
@@ -759,7 +794,10 @@ class CTRT_Import extends EQdkp_Admin
                     foreach($allattendees as $player => $times)
                     {
                         $allloot[$i]['attendees'][] = $player;
-                        $allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
+                        if (isset($player['dkp']))
+                        	$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $player['dkp'];	
+ 						else                       
+ 							$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
                     }
                 }
             }
@@ -864,7 +902,19 @@ class CTRT_Import extends EQdkp_Admin
             {
                 $eventvalue = $db->query("SELECT `event_value` FROM ".EVENTS_TABLE." WHERE event_name = '".mysql_real_escape_string($hevent)."' LIMIT 1");
                 $eventvalue = $db->fetch_record($eventvalue);
-                $eventvalue = $eventvalue['event_value'];
+                // Check if Raid Note: XXX WRS has been set, if so use this value 
+                //    otherwise use $eventvalue['event_value'] for WRS value.
+                if(!empty($globalraidnote))
+            	{
+	                preg_match("/([\d\.]+) WRS/", $globalraidnote, $dkpinfo);
+	                if(!empty($dkpinfo[1]) || $dkpinfo[1] == "0")
+	                {
+	                    $eventvalue = $dkpinfo[1];
+	                }
+	                else
+						$eventvalue = $eventvalue['event_value'];	                
+            	}
+                
                 if($eventvalue <= 0)
                 {
                     $eventvalue = "";
