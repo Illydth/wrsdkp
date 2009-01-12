@@ -1190,18 +1190,19 @@ class CTRT_Import extends EQdkp_Admin
 							);
 							if (!$this->_ctrt_settings['OnlySimulate']) $this->log_insert(array('log_type'   => $log_action['header'],'log_action' => $log_action));
 						}
-						if(!$this->_ctrt_settings['OnlySimulate']) $db->query("INSERT INTO ".RAID_ATTENDEES_TABLE." (`raid_id`, `member_name`) VALUES ('".mysql_real_escape_string($newraidid)."', '".mysql_real_escape_string($iattendee)."');");
 						//echo "<br>DKP Check for " . $iattendee . ": " . $_POST['allplayers'][$iattendee]['dkp'];
 						if (isset($_POST['allplayers'][$iattendee]['dkp']) && $_POST['allplayers'][$iattendee]['dkp'] != "")
 						{
 							//echo "<br>     DKP Value Set.";
 							//$sql = "UPDATE ".MEMBERS_TABLE." SET member_earned = member_earned + ".mysql_real_escape_string($_POST['allplayers'][$iattendee]['dkp']).", member_status = '1', member_lastraid = '".mysql_real_escape_string($iraid['time'])."', member_raidcount = member_raidcount + 1 WHERE member_name = '".mysql_real_escape_string($iattendee)."';";
+							if(!$this->_ctrt_settings['OnlySimulate']) $db->query("INSERT INTO ".RAID_ATTENDEES_TABLE." (`raid_id`, `member_name`, `wrs_earned`) VALUES ('".mysql_real_escape_string($newraidid)."', '".mysql_real_escape_string($iattendee)."', '".mysql_real_escape_string($_POST['allplayers'][$iattendee]['dkp'])."');");
 							if(!$this->_ctrt_settings['OnlySimulate']) $db->query("UPDATE ".MEMBERS_TABLE." SET member_earned = member_earned + ".mysql_real_escape_string($_POST['allplayers'][$iattendee]['dkp']).", member_status = '1', member_lastraid = '".mysql_real_escape_string($iraid['time'])."', member_raidcount = member_raidcount + 1 WHERE member_name = '".mysql_real_escape_string($iattendee)."';");
 						}
 						else
 						{
 							//echo "<br>     DKP Value NOT Set.";
 							//$sql = "UPDATE ".MEMBERS_TABLE." SET member_earned = member_earned + ".mysql_real_escape_string($iraid['dkp']).", member_status = '1', member_lastraid = '".mysql_real_escape_string($iraid['time'])."', member_raidcount = member_raidcount + 1 WHERE member_name = '".mysql_real_escape_string($iattendee)."';";
+							if(!$this->_ctrt_settings['OnlySimulate']) $db->query("INSERT INTO ".RAID_ATTENDEES_TABLE." (`raid_id`, `member_name`, `wrs_earned`) VALUES ('".mysql_real_escape_string($newraidid)."', '".mysql_real_escape_string($iattendee)."', '".mysql_real_escape_string($iraid['dkp'])."');");
 							if(!$this->_ctrt_settings['OnlySimulate']) $db->query("UPDATE ".MEMBERS_TABLE." SET member_earned = member_earned + ".mysql_real_escape_string($iraid['dkp']).", member_status = '1', member_lastraid = '".mysql_real_escape_string($iraid['time'])."', member_raidcount = member_raidcount + 1 WHERE member_name = '".mysql_real_escape_string($iattendee)."';");
 						}
 						//echo "<br>     Update SQL: " . $sql; 

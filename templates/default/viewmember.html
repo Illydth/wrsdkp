@@ -26,8 +26,8 @@
     <th align="left" width="70" nowrap="nowrap">{L_DATE}</th>
     <th align="left" width="35%">{L_NAME}</th>
     <th align="left" width="65%">{L_NOTE}</th>
-    <th align="left" width="60" nowrap="nowrap">{L_EARNED}</th>
-    <th align="left" width="70" nowrap="nowrap">{L_CURRENT}</th>
+    <th align="left" width="60" nowrap="nowrap">{L_VALUE}</th>
+    <th align="left" width="70" nowrap="nowrap">{L_EARNED}</th>
   </tr>
   <!-- BEGIN raids_row -->
   <tr class="{raids_row.ROW_CLASS}">
@@ -35,7 +35,8 @@
     <td width="35%"><a href="{raids_row.U_VIEW_RAID}">{raids_row.NAME}</a></td>
     <td width="65%">{raids_row.NOTE}</td>
     <td width="60" nowrap="nowrap" class="positive">{raids_row.EARNED}</td>
-    <td width="70" nowrap="nowrap" class="positive">{raids_row.CURRENT_EARNED}</td>
+    <!--  <td width="70" nowrap="nowrap" class="positive">{raids_row.CURRENT_EARNED}</td>  -->
+    <td width="70" nowrap="nowrap" class="positive">{raids_row.RAID_EARNED}</td>
   </tr>
   <!-- END raids_row -->
   <tr>

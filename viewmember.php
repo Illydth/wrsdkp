@@ -93,6 +93,17 @@ if ( (isset($_GET[URI_NAME])) && (strval($_GET[URI_NAME] != '')) )
     }
     while ( $raid = $db->fetch_record($raids_result) )
     {
+    	$sql2 = "SELECT wrs_earned 
+    			FROM " . RAID_ATTENDEES_TABLE . " 
+    			WHERE member_name = '" . $member['member_name'] . "' 
+    			AND raid_id = '" . $raid['raid_id'] . "'";
+    	echo "SQL: " . $sql2;
+	    if ( !($raid_attendees_result = $db->query($sql2)) )
+	    {
+	        message_die('Could not obtain raid information', '', __FILE__, __LINE__, $sql);
+	    }
+    	$raid_wrs_val = $db->fetch_record($raid_attendees_result);
+    	
         $tpl->assign_block_vars('raids_row', array(
             'ROW_CLASS'      => $eqdkp->switch_row_class(),
             'DATE'           => ( !empty($raid['raid_date']) ) ? date($user->style['date_notime_short'], $raid['raid_date']) : '&nbsp;',
@@ -100,7 +111,9 @@ if ( (isset($_GET[URI_NAME])) && (strval($_GET[URI_NAME] != '')) )
             'NAME'           => ( !empty($raid['raid_name']) ) ? stripslashes($raid['raid_name']) : '&lt;<i>Not Found</i>&gt;',
             'NOTE'           => ( !empty($raid['raid_note']) ) ? stripslashes($raid['raid_note']) : '&nbsp;',
             'EARNED'         => $raid['raid_value'],
-            'CURRENT_EARNED' => sprintf("%.2f", $current_earned))
+        	'RAID_EARNED'	 => sprintf("%.2f", $raid_wrs_val['wrs_earned']),
+            'CURRENT_EARNED' => sprintf("%.2f", $current_earned)
+        	)
         );
         $current_earned -= $raid['raid_value'];
     }
@@ -267,6 +280,7 @@ if ( (isset($_GET[URI_NAME])) && (strval($_GET[URI_NAME] != '')) )
         'NAME'     => $member['member_name'],
 
         'L_EARNED'                        => $user->lang['earned'],
+    	'L_VALUE'					  	  => $user->lang['value'],
         'L_SPENT'                         => $user->lang['spent'],
         'L_ADJUSTMENT'                    => $user->lang['adjustment'],
         'L_CURRENT'                       => $user->lang['current'],
