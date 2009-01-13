@@ -611,12 +611,15 @@ class CTRT_Import extends EQdkp_Admin
 				empty($allattendees[$playerdata['player']]['note']))
 				{
 					$allattendees[$playerdata['player']]['note'] = $playerdata['note'];
-					//@@@ If note contains "WRS" as value, set player WRS field.
+					//@@@ If note contains "WRS" as value, set player WRS field and adjustment note if applicable.
 					if(!empty($playerdata['note']))
 					{
 						preg_match("/([\d\.]+) WRS/", $playerdata['note'], $dkpinfo);
 						if(isset($dkpinfo[1]))
 							$allattendees[$playerdata['player']]['dkp'] = $dkpinfo[1];
+						preg_match("/:(.*):/", $playerdata['note'], $adjnote);
+						if(isset($adjnote[1]))
+							$allattendees[$playerdata['player']]['adjustment'] = $adjnote[1];
 					}
 				}
 				 
@@ -729,9 +732,9 @@ class CTRT_Import extends EQdkp_Admin
 						{
 							$allloot[$i]['attendees'][] = $player;
 							if (isset($allattendees[$player]['dkp']))
-							$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $allattendees[$player]['dkp'];
+								$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $allattendees[$player]['dkp'];
 							else
-							$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
+								$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
 						}
 					}
 				}
@@ -789,9 +792,9 @@ class CTRT_Import extends EQdkp_Admin
 						$allloot[$i]['attendees'][] = $player;
 						//                        if (isset($player['dkp']))
 						if (isset($allattendees[$player]['dkp']))
-						$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $allattendees[$player]['dkp'];
+							$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $allattendees[$player]['dkp'];
 						else
-						$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
+							$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
 					}
 				}
 			}
@@ -864,6 +867,7 @@ class CTRT_Import extends EQdkp_Admin
                         'ALLPLAYERCLASS' => $playerdata['class'],
                         'ALLPLAYERLEVEL' => $playerdata['level'],
 						'ALLPLAYERDKP' => $playerdata['dkp'],
+						'ALLPLAYERADJ' => $playerdata['adjustment'],
 			));
 		}
 
@@ -1205,7 +1209,22 @@ class CTRT_Import extends EQdkp_Admin
 							if(!$this->_ctrt_settings['OnlySimulate']) $db->query("INSERT INTO ".RAID_ATTENDEES_TABLE." (`raid_id`, `member_name`, `wrs_earned`) VALUES ('".mysql_real_escape_string($newraidid)."', '".mysql_real_escape_string($iattendee)."', '".mysql_real_escape_string($iraid['dkp'])."');");
 							if(!$this->_ctrt_settings['OnlySimulate']) $db->query("UPDATE ".MEMBERS_TABLE." SET member_earned = member_earned + ".mysql_real_escape_string($iraid['dkp']).", member_status = '1', member_lastraid = '".mysql_real_escape_string($iraid['time'])."', member_raidcount = member_raidcount + 1 WHERE member_name = '".mysql_real_escape_string($iattendee)."';");
 						}
-						//echo "<br>     Update SQL: " . $sql; 
+						//echo "<br>     Update SQL: " . $sql;
+						
+						// Handle any adjustment text we want to process.
+						if (isset($_POST['allplayers'][$iattendee]['adjustment']) && $_POST['allplayers'][$iattendee]['adjustment'] != "")
+						{	
+							if(!$this->_ctrt_settings['OnlySimulate']) $db->query("INSERT INTO ".ADJUSTMENTS_TABLE." (`adjustment_value`, `adjustment_date`, `member_name`, `adjustment_reason`, `adjustment_added_by`, `adjustment_group_key`) VALUES ('0' , '".mysql_real_escape_string($iraid['time'])."' , '".mysql_real_escape_string($iattendee)."' , '".mysql_real_escape_string($_POST['allplayers'][$iattendee]['adjustment'])."' , 'WRS Upload' , '".$this->gen_group_key($iraid['time'], "Upload Adjustment", mysql_real_escape_string($_POST['allplayers'][$iattendee]['adjustment']))."');");
+							$log_action = array(
+	                        				'header'         => '{L_ACTION_INDIVADJ_ADDED}',
+	                                        '{L_ADJUSTMENT}' => 5,
+	                                        '{L_REASON}'     => $_POST['allplayers'][$iattendee]['adjustment'],
+	                                        '{L_MEMBERS}'    => $iattendee,
+	                                        '{L_ADDED_BY}'   => 'RaidTracker (by '.$user->data['username'].')',
+									);
+							if (!$this->_ctrt_settings['OnlySimulate']) $this->log_insert(array('log_type'   => $log_action['header'],'log_action' => $log_action));
+							$text .= sprintf($user->lang['ctrt_step3_adjadded'], $_POST['allplayers'][$iattendee]['adjustment'], $iattendee);
+						} 
 					}
 					$text .= sprintf($user->lang['ctrt_step3_attendeesadded'], count($iraid['attendees']));
 
