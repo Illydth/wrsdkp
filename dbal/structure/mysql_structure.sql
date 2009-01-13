@@ -199,6 +199,7 @@ DROP TABLE IF EXISTS eqdkp_raid_attendees;
 CREATE TABLE `eqdkp_raid_attendees` (
   `raid_id` mediumint(8) unsigned NOT NULL,
   `member_name` varchar(30) NOT NULL,
+  `wrs_earned` int(10) NOT NULL,
   KEY `raid_id` (`raid_id`),
   KEY `member_name` (`member_name`)
 )TYPE=InnoDB;
