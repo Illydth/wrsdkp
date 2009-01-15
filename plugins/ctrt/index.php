@@ -778,9 +778,9 @@ class CTRT_Import extends EQdkp_Admin
 							{
 								$allloot[$i]['attendees'][] = $player;
 								if (isset($allattendees[$player]['dkp']))
-								$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $allattendees[$player]['dkp'];
+									$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player . " - " . $allattendees[$player]['dkp'];
 								else
-								$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
+									$allraidattendees[$alllootraidevent][$alllootraidnote][] = $player;
 							}
 						}
 					}
@@ -827,7 +827,10 @@ class CTRT_Import extends EQdkp_Admin
 			if(!isset($allraids[$globalraidnote])) { $allraids[$globalraidnote] = array(); }
 			foreach($allattendees as $player => $times)
 			{
-				$allraidattendees[$globalevent][$globalraidnote][] = $player;
+				if (isset($allattendees[$player]['dkp']))
+					$allraidattendees[$globalevent][$globalraidnote][] = $player . " - " . $allattendees[$player]['dkp'];
+				else
+					$allraidattendees[$globalevent][$globalraidnote][] = $player;
 			}
 
 			# Ensure no duplicates
