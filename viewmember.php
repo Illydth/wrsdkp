@@ -97,7 +97,6 @@ if ( (isset($_GET[URI_NAME])) && (strval($_GET[URI_NAME] != '')) )
     			FROM " . RAID_ATTENDEES_TABLE . " 
     			WHERE member_name = '" . $member['member_name'] . "' 
     			AND raid_id = '" . $raid['raid_id'] . "'";
-    	echo "SQL: " . $sql2;
 	    if ( !($raid_attendees_result = $db->query($sql2)) )
 	    {
 	        message_die('Could not obtain raid information', '', __FILE__, __LINE__, $sql);
