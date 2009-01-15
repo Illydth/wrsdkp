@@ -356,41 +356,60 @@ class CTRT_Import extends EQdkp_Admin
 		//echo "<br>    Member Current Value in GetMemberWrs: " . $value['member_current'];
 
 		if ($db->num_rows($result) > 0)
-		return $value['member_current'];
+			return $value['member_current'];
 		else
-		return -1;
+			return -1;
 	}
 
 	// The original called function was GetDkpValue (below) to return the min value of the
 	// item in the table.  This new function gets the current DKP value for a member and
 	// then calculates the WRS cost based upon the member's current WRS.
-	function CalcWRSValue($item, $memberName, $raidValue)
+	// There are 3 different possible methods of obtaining the WRS value.  
+	//	  1) If the looter has already had an item WRS calculation, set this WRS to 0. 
+	// 			This allows multiple loots in one raid by the same person without calculating
+	//			negative WRS for that player.
+	//    2) If no other item has been won, and a Cost was imported via a <Costs> tag, use 
+	//			it and override everything else.
+	//    3) If no imported <Costs> tag, check for a default value for the item, if there use it.
+	//    4) If no <Costs> tag and no default value, return the WRS Calculated value.
+	function CalcWRSValue($item, $memberName, $raidValue, $importCost = -1, $alreadyCalced = FALSE)
 	{
 		global $db;
 
-		//$value = $db->query("SELECT MIN(`item_value`) as minval FROM ".ITEMS_TABLE." WHERE `item_name` = '".mysql_real_escape_string($item)."';");
-		//$value = $db->fetch_record($value);
-		//if(!is_numeric($value['minval']))
-		//{
-		//    return $this->_ctrt_settings['DefaultDKPCost'];
-		//}
-		//else
-		//{
+		// First, Calculate the WRS Value of the Item per WRS rules.
 		$memberWRSVal = $this->GetMemberWrs($memberName);
 		 
 		if ($memberWRSVal == -1)
 		{
-			return $raidValue;
+			$itemCost = $raidValue;
 		}
 		elseif ($memberWRSVal > 100)
 		{
 			$finalWR = ($memberWRSVal + $raidValue - 100) / 2;
 			$itemCost = $memberWRSVal - $finalWR;
-			return $itemCost;
 		}
 		else
-		return $memberWRSVal + $raidValue;
-		//}
+			$itemCost = $memberWRSVal + $raidValue;
+		
+		// Secondly, figure out if we're using DefaultDKPCost for the item.
+		//    If set, override the calculated value above.
+		//$value = $db->query("SELECT MIN(`item_value`) as minval FROM ".ITEMS_TABLE." WHERE `item_name` = '".mysql_real_escape_string($item)."';");
+		//$value = $db->fetch_record($value);
+		//if(!is_numeric($value['minval']))
+		//    $itemCost = $this->_ctrt_settings['DefaultDKPCost'];
+		
+		// Third, if the item had an imported cost, override all calculations and set cost.
+		if ($importCost != -1)
+			$itemCost = $importCost;
+
+		// Lastly, if the player has already won an item and that item has already had it's 
+		//    wrs calculated, simply set the $itemCost to 0;
+		if ($alreadyCalced)
+			$itemCost = 0;
+			
+		// Return value should be the imported cost if set, otherwise the default value
+		//   if set, otherwise the WRS rules calculated value.
+		return $itemCost;
 	}
 
 	function GetDkpValue($item)
@@ -579,7 +598,8 @@ class CTRT_Import extends EQdkp_Admin
 		$globalraidnote = $this->GetRaidNoteFromString($adata['RaidInfo']['note']);
 		if ($globalraidnote == "Unknown")
 		$globalraidnote = $adata['RaidInfo']['note'];
-		$globalraidstart = $this->ConvertTimestringToTimestamp($adata['RaidInfo']['start']);
+		//$globalraidstart = $this->ConvertTimestringToTimestamp($adata['RaidInfo']['start']);
+		$globalraidstart = $this->ConvertTimestringToTimestamp($adata['RaidInfo']['key']);
 		# Set Join Times for Players
 		if($allforeachdata = @array_shift($adata['RaidInfo'][0]['Join']))
 		{
@@ -698,7 +718,14 @@ class CTRT_Import extends EQdkp_Admin
 			if(!isset($allraids[$alllootraidnote])) { $allraids[$alllootraidnote] = array(); }
 			if(!isset($allraids[$alllootraidevent][$alllootraidnote])) { $allraids[$alllootraidevent][$alllootraidnote] = $allloot[$i]['time']; }
 			#$allloot[$i]['dkp'] = $this->_ctrt_settings['DefaultDKPCost'];
-			if(!empty($lootdata['Note']))
+			// This section calculates the item's DKP cost.  If there is a cost in the  
+			//    <Costs> tag it takes precidence, if not the item note is parsed for 
+			//    "XX WRS" to determine cost.  
+			if(isset($lootdata['Costs']))
+			{
+				$allloot[$i]['dkp'] = $lootdata['Costs'];
+			}
+			if(!empty($lootdata['Note']) && !isset($allloot[$i]['dkp']))
 			{
 				preg_match("/([\d\.]+) WRS/", $lootdata['Note'], $dkpinfo);
 				if(!empty($dkpinfo[1]) || $dkpinfo[1] == "0")
@@ -938,6 +965,7 @@ class CTRT_Import extends EQdkp_Admin
                     'ATTENDEESCOUNT' => @count($allraidattendees[$hevent][$hraidnote]),
 				));
 				$i = 0;
+				$alreadyCalced = FALSE;
 				$hraidattendees = array();
 				if(!isset($allloot)) { $allloot = array(); }
 				foreach($allloot as $hlootid => $hlootdata)
@@ -957,7 +985,7 @@ class CTRT_Import extends EQdkp_Admin
 							//));
 
 							// New Code to get WRS Value by Member WRS.
-							//echo "<br>Checking DKP Information for User: " . $hlootdata['looter'];
+							//   This obtains the WRS value of the looter to return proper WRS.
 							if(isset($allattendees[$hlootdata['looter']]['dkp']))
 							{
 								//echo "<br>     Special DKP allocated, value: " . $allattendees[$hlootdata['looter']]['dkp'];
@@ -968,17 +996,37 @@ class CTRT_Import extends EQdkp_Admin
 								//echo "<br>      No Special DKP allocated, item value: " . $eventvalue;
 								$itemDKPBase = $eventvalue;
 							}
+							
+							// Set Import Cost for WRS Calculation.
+							if(isset($hlootdata['dkp']))
+							{
+								echo "Got DKP Cost: " . $hlootdata['dkp'];
+								$importCost = $hlootdata['dkp'];
+							}
+							else
+							{
+								echo "DKP Cost not set.";
+								$importCost = -1;
+							}
+
+							//Capture each looter, if the looter already exists set a 0 WRS value for the item.
+							if (!in_array($hlootdata['looter'], $hraidattendees))
+								$hraidattendees[$i]=$hlootdata['looter'];
+							else
+								$alreadyCalced = TRUE;
+							
 							$tpl->assign_block_vars('events_row.raids_row.loot_row', array(
                                 'HNR' => $i,
                                 'HNAME' => $hlootdata['name'],
                                 'HID' => $hlootdata['itemid'],
                                 'HLOOTER' => $hlootdata['looter'],
-                                'HDKP' => $this->CalcWRSValue($hlootdata['name'], $hlootdata['looter'], $itemDKPBase),
+                                'HDKP' => $this->CalcWRSValue($hlootdata['name'], $hlootdata['looter'], $itemDKPBase, $importCost, $alreadyCalced),
                                 'STRIPPEDHRAIDNOTE' => $this->StripUniqIdFromString($hraidnote),
 							));
 						}
 					}
 					$i++;
+					$alreadyCalced = FALSE;
 				}
 			}
 		}
