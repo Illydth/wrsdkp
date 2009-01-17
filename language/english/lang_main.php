@@ -191,7 +191,7 @@ $lang['viewraid_drops_footcount']        = "... found %1\$d drop(s)";
 
 // Submit Buttons
 $lang['close_window'] = 'Close Window';
-$lang['compare_members'] = 'Compare Members';
+$lang['compare_members'] = 'Get More Info on Checked';
 $lang['create_news_summary'] = 'Create News Summary';
 $lang['login'] = 'Login';
 $lang['logout'] = 'Logout';
