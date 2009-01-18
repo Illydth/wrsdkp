@@ -42,6 +42,7 @@ class CTRT_ManageCTRT extends CTRT_Base {
                                    "add_items"          => "manage_add_items.php",
                                    "ignore_items"       => "manage_ignore_items.php",
                                    "aliases"            => "manage_alias.php",
+    							   "item_default_values"=> "manage_item_default.php",
                                    );
 
     /**

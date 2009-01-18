@@ -22,6 +22,7 @@ if (!defined('CTRT_EVENT_TRIGGERS_TABLE'))      { define('CTRT_EVENT_TRIGGERS_TA
 if (!defined('CTRT_RAID_NOTE_TRIGGERS_TABLE'))  { define('CTRT_RAID_NOTE_TRIGGERS_TABLE', ($table_prefix . 'ctrt_raid_note_triggers')); }
 if (!defined('CTRT_OWN_RAIDS_TABLE'))           { define('CTRT_OWN_RAIDS_TABLE', ($table_prefix . 'ctrt_own_raids')); }
 if (!defined('CTRT_ITEMS_TABLE'))               { define('CTRT_ITEMS_TABLE', ($table_prefix . 'ctrt_items')); }
+if (!defined('CTRT_DEFAULTVALUE_TABLE'))        { define('CTRT_DEFAULTVALUE_TABLE', ($table_prefix . 'ctrt_item_default_value')); }
 
 // legacy defines from when I combined these tables into ctrt_items
 if (!defined('CTRT_ADD_ITEMS_TABLE'))    { define('CTRT_ADD_ITEMS_TABLE', ($table_prefix . 'ctrt_add_items')); }

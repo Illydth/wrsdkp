@@ -63,6 +63,7 @@ $lang['ctrt_adminmenu_raid_note_triggers']  = "Raid Note Triggers";
 $lang['ctrt_adminmenu_own_raids']           = "Own Raids";
 $lang['ctrt_adminmenu_add_items']           = "Add Items";
 $lang['ctrt_adminmenu_ignore_items']        = "Ignored Items";
+$lang['ctrt_adminmenu_item_default_values'] = "Default Item Values";
 
 $lang['ctrt_adminmenu_add']     = "Add";
 $lang['ctrt_adminmenu_list']    = "List";
@@ -150,6 +151,10 @@ $lang['ctrt_help_export']         = "Copy the text below and paste into your fav
 $lang['ctrt_help_import']         = "Paste the text below to import your aliases.";
 $lang['ctrt_help_import_format']  = "The import is case insensitive and should be in the form";
 
+/**
+ * Item Default Value
+ */
+$lang['ctrt_help_item_default_value'] = "Here you can set the default value for an imported item.  These values override calculated WRS values but do not override imported values (in cost or notes field).";
 
 /**
  * Item Quality
@@ -184,6 +189,7 @@ $lang['ctrt_raid_note']     = "Raid Note";
 $lang['ctrt_own_raid']      = "Own Raid";
 $lang['ctrt_item_wow']      = "WoW Item";
 $lang['ctrt_item_wow_id']   = "WoW Item ID";
+$lang['ctrt_item_value']    = "Default Item Value";
 
 /*
  * User messages
