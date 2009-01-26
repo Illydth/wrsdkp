@@ -266,12 +266,40 @@ class Add_Raid extends EQdkp_Admin
         //
         // Remove the value of the old raid from the attendees' earned
         //
-        $sql = 'UPDATE ' . MEMBERS_TABLE . "
-                SET member_earned = member_earned - " . $this->old_raid['raid_value'] . ",
-                    member_raidcount = member_raidcount - 1
-                WHERE member_name IN ('" . str_replace(',', "', '", $this->old_raid['raid_attendees']) . '\')';
-        $db->query($sql);
+        //$sql = 'UPDATE ' . MEMBERS_TABLE . "
+        //        SET member_earned = member_earned - " . $this->old_raid['raid_value'] . ",
+        //            member_raidcount = member_raidcount - 1
+        //        WHERE member_name IN ('" . str_replace(',', "', '", $this->old_raid['raid_attendees']) . '\')';
+        //$db->query($sql);
         
+        //
+        // Remove each specific WRS value earned from each previous member of the raid.
+        //
+        $old_raid_attendees = ucwords($this->old_raid['raid_attendees']);
+        $old_raid_attendees = str_replace("\'", "", $old_raid_attendees);
+        $n_old_raid_attendees = explode(',', $old_raid_attendees);
+        $n_old_raid_attendees = array_unique($n_old_raid_attendees);
+        sort($n_old_raid_attendees);
+        reset($n_old_raid_attendees);
+        $n_old_raid_attendees   = implode(',', $n_old_raid_attendees);
+        $n_old_raid_attendees   = preg_replace('/^\,(.+)/', '\1', $n_old_raid_attendees);
+        $n_old_raid_attendees  = explode(',', $n_old_raid_attendees);
+        
+        foreach ( $n_old_raid_attendees as $member_name )
+        {
+        	//Calculate earned_val here for each member.
+        	if (isset($this->old_wrs_earned['wrs_earned'][$member_name]))
+        		$earned_val = $this->old_wrs_earned['wrs_earned'][$member_name];
+        	else
+        		$earned_val = $this->old_raid['raid_value'];
+        		
+	        $sql = 'UPDATE ' . MEMBERS_TABLE . "
+	                SET member_earned = member_earned - " . $earned_val . ",
+	                    member_raidcount = member_raidcount - 1
+	                WHERE member_name = '" . $member_name . '\'';
+	        $db->query($sql);
+        }
+                
         //
         // Update the raid
         //
@@ -299,6 +327,53 @@ class Add_Raid extends EQdkp_Admin
         // Handle members
         //
         $this->handle_members($n_members_array, $raid_value, 'process_update');
+        
+        //
+        // Recalculate WRS earned based upon prior raid value to new raid value.  The supported
+        //    conditions are:
+        // 1) 0 WRS.  If the old wrs earned is 0, the new WR earned is 0.
+        // 2) If the Old WR earned is more than 0 but less than old raid value, user is 
+        //		considered as having won half WR for the raid.  Half the current WR value.
+        // 3) If the old WR is the same as the old raid value, user gets new raid value.
+        // 4) If the old WR is more than old raid value, user gets new WR value plus
+		//		difference between old wr value and old value given.
+		$old_raid_value = $this->old_raid['raid_value']; 
+		$new_raid_value = $raid_value;
+        
+        foreach ( $n_old_raid_attendees as $member_name )
+        {
+        	if (isset($this->old_wrs_earned['wrs_earned'][$member_name]))
+        		if ($this->old_wrs_earned['wrs_earned'][$member_name] == 0)
+        		{
+        			$this->old_wrs_earned['wrs_earned'][$member_name] = 0;
+        			$new_wr_mod = -$new_raid_value + 0;
+        			$sql  = 'UPDATE ' . MEMBERS_TABLE . ' m 
+                         SET m.member_earned = m.member_earned + ' . $new_wr_mod . '
+                         WHERE m.member_name = \'' . $member_name . '\'';
+					$db->query($sql);
+        		}
+        		elseif ($this->old_wrs_earned['wrs_earned'][$member_name] < $old_raid_value)
+        		{
+        			$this->old_wrs_earned['wrs_earned'][$member_name] == floor($new_raid_value / 2);
+        			$new_wr_mod = -$new_raid_value + floor($new_raid_value / 2);
+        			$sql  = 'UPDATE ' . MEMBERS_TABLE . ' m 
+                         SET m.member_earned = m.member_earned + ' . $new_wr_mod. '
+                         WHERE m.member_name = \'' . $member_name . '\'';
+        			$db->query($sql);
+        		}
+				elseif ($this->old_wrs_earned['wrs_earned'][$member_name] > $old_raid_value)
+        		{
+        			$this->old_wrs_earned['wrs_earned'][$member_name] = 
+        				$new_raid_value + $this->old_wrs_earned['wrs_earned'][$member_name] - $old_raid_value;
+        			$new_wr_mod = $this->old_wrs_earned['wrs_earned'][$member_name] - $old_raid_value;
+        			$sql  = 'UPDATE ' . MEMBERS_TABLE . ' m 
+                         SET m.member_earned = m.member_earned + ' . $new_wr_mod. '
+                         WHERE m.member_name = \'' . $member_name . '\'';
+					$db->query($sql);
+        		}
+				else // Either the WR Earned is equal to the raid value or something went wrong.  Just give them current WR value.
+					$this->old_wrs_earned['wrs_earned'][$member_name] = $new_raid_value;
+        }
         
         //
         // Insert the attendees
