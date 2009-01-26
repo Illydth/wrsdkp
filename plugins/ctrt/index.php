@@ -406,8 +406,8 @@ class CTRT_Import extends EQdkp_Admin
 			elseif ($importCost <= $memberWRSVal)
 				$itemCost = $importCost;
 			else
-				$itemCost = $memberWRSVal;
-
+				$itemCost = $memberWRSVal; 
+			
 		// Return value should be the imported cost if set, otherwise the default value
 		//   if set, otherwise the WRS rules calculated value.
 		return $itemCost;
@@ -988,15 +988,9 @@ class CTRT_Import extends EQdkp_Admin
 							// New Code to get WRS Value by Member WRS.
 							//   This obtains the WRS value of the looter to return proper WRS.
 							if(isset($allattendees[$hlootdata['looter']]['dkp']))
-							{
-								//echo "<br>     Special DKP allocated, value: " . $allattendees[$hlootdata['looter']]['dkp'];
 								$itemDKPBase = $allattendees[$hlootdata['looter']]['dkp'];
-							}
 							else
-							{
-								//echo "<br>      No Special DKP allocated, item value: " . $eventvalue;
 								$itemDKPBase = $eventvalue;
-							}
 							
 							// Set Import Cost for WRS Calculation.
 							if(isset($hlootdata['dkp']))
@@ -1004,7 +998,8 @@ class CTRT_Import extends EQdkp_Admin
 							else
 								$importCost = -1;
 
-							//Capture each looter, if the looter already exists set WRS to calulated value for the item.
+							//Capture each looter, if the looter already exists set WRS 
+							//  to calculated value for the item.
 							for ($x=0; $x < $i; $x++)
 							{
 								if (isset($hraidattendees[$x]['looter']) && $hraidattendees[$x]['looter']==$hlootdata['looter'])
@@ -1015,6 +1010,7 @@ class CTRT_Import extends EQdkp_Admin
 								else
 									$id = -1;
 							}
+							
 							if ($id==-1)
 							{
 								$hraidattendees[$i]['looter']=$hlootdata['looter'];
@@ -1025,12 +1021,12 @@ class CTRT_Import extends EQdkp_Admin
 								else
 									$hraidattendees[$i]['WRS'] = $dbMemberWRS - $WRSVal + $eventvalue;
 							}
-							else
-							{
-								$WRSVal =  $this->CalcWRSValue($hlootdata['name'], $hlootdata['looter'], 0, $importCost, $hraidattendees[$id]['WRS']);
+ 							else
+ 							{
+								$WRSVal = $this->CalcWRSValue($hlootdata['name'], $hlootdata['looter'], 0, $importCost, $hraidattendees[$id]['WRS']);
 								$hraidattendees[$id]['WRS'] = $hraidattendees[$id]['WRS'] - $WRSVal;
-							}
-							
+							} 
+ 							
 							$tpl->assign_block_vars('events_row.raids_row.loot_row', array(
                                 'HNR' => $i,
                                 'HNAME' => $hlootdata['name'],

@@ -178,6 +178,9 @@ class Add_Raid extends EQdkp_Admin
             //
             $this->handle_members($members_array, $raid_value, 'process_add');
            
+            // This is created to ensure all raid attendees get full WR credit for raid.
+            $attendee_wrs_val = array(); 
+            
             //
             // Insert the attendees
             //
@@ -185,7 +188,7 @@ class Add_Raid extends EQdkp_Admin
             $raid_attendees = implode(',', $members_array);
             $raid_attendees = preg_replace('/^\,(.+)/', '\1', $raid_attendees);
             $members_array  = explode(',', $raid_attendees);
-            $this->add_attendees($members_array, $this_raid_id);
+            $this->add_attendees($members_array, $attendee_wrs_val, $this_raid_id, $raid_value);
             
             //
             // Call plugin add hooks
@@ -248,6 +251,7 @@ class Add_Raid extends EQdkp_Admin
         // Get the old data
         //
         $this->get_old_data();
+        $this->get_old_wrs_earned();
         
         //
         // Remove the attendees from the old raid
@@ -303,7 +307,7 @@ class Add_Raid extends EQdkp_Admin
         $raid_attendees   = implode(',', $n_members_array);
         $raid_attendees   = preg_replace('/^\,(.+)/', '\1', $raid_attendees);
         $n_members_array  = explode(',', $raid_attendees);
-        $this->add_attendees($n_members_array, $this->url_id);
+        $this->add_attendees($n_members_array, $this->old_wrs_earned['wrs_earned'], $this->url_id, $raid_value);
         
         //
         // Update firstraid / lastraid [ #749201 ]
@@ -457,16 +461,31 @@ class Add_Raid extends EQdkp_Admin
         // Get the old data
         //
         $this->get_old_data();
+        $this->get_old_wrs_earned();
         
         //
         // Take the value away from the attendees
         //
-        $sql = 'UPDATE ' . MEMBERS_TABLE . "
-                SET member_earned = member_earned - " . $this->old_raid['raid_value'] . ",
-                    member_raidcount = member_raidcount - 1
-                WHERE member_name IN ('" . str_replace(',', "', '", $this->old_raid['raid_attendees']) . '\')';
-        $db->query($sql);
+        //$sql = 'UPDATE ' . MEMBERS_TABLE . "
+        //        SET member_earned = member_earned - " . $this->old_raid['raid_value'] . ",
+        //            member_raidcount = member_raidcount - 1
+        //        WHERE member_name IN ('" . str_replace(',', "', '", $this->old_raid['raid_attendees']) . '\')';
+        //$db->query($sql);
         
+        $members_array = explode(',', $this->old_raid['raid_attendees']);
+        $members_array = array_unique($members_array);
+        sort($members_array);
+        reset($members_array);
+
+        foreach ($members_array as $name)
+        {
+	        $sql = 'UPDATE ' . MEMBERS_TABLE . "
+	        		SET member_earned = member_earned - " . $this->old_wrs_earned['wrs_earned'][$name] . ",
+	        			member_raidcount = member_raidcount - 1
+	        		WHERE member_name = '" . $name . "'";
+	        $db->query($sql);
+		}
+	        		
         //
         // Remove cost of items from this raid from buyers
         //
@@ -498,6 +517,11 @@ class Add_Raid extends EQdkp_Admin
         // Remove the raid itself
         //
         $db->query('DELETE FROM ' . RAIDS_TABLE . " WHERE raid_id='" . $this->url_id . "'");
+        
+        //
+        // Remove any Raid Adjustment Notes
+        //
+        $db->query('DELETE FROM ' . ADJUSTMENTS_TABLE . " WHERE adjustment_date='" . $this->old_raid['raid_date'] . "' AND adjustment_added_by = 'WRS Upload'");
         
         //
         // Update firstraid / lastraid [ #749201 ]
@@ -665,6 +689,40 @@ class Add_Raid extends EQdkp_Admin
     }
     
     /**
+    * Get WRS Earned for Old Raid.
+    */
+    function get_old_wrs_earned()
+    {
+        global $db, $eqdkp, $user, $tpl, $pm;
+        global $SID;
+        
+        $sql = 'SELECT raid_name, raid_value, raid_note, raid_date
+                FROM ' . RAIDS_TABLE . "
+                WHERE raid_id='" . $this->url_id . "'";
+        $result = $db->query($sql);
+        while ( $row = $db->fetch_record($result) )
+        {
+            $this->old_wrs_earned = array(
+                'raid_name'  => addslashes($row['raid_name']),
+                'raid_value' => addslashes($row['raid_value']),
+                'raid_note'  => addslashes($row['raid_note']),
+                'raid_date'  => addslashes($row['raid_date'])
+            );
+        }
+        $db->free_result($result);
+        
+        $sql = 'SELECT r.member_name, r.wrs_earned
+                FROM ' . RAID_ATTENDEES_TABLE . " r, " . MEMBERS_TABLE . " m
+                WHERE m.member_name = r.member_name AND raid_id='" . $this->url_id . "'
+                ORDER BY member_name";
+        $result = $db->query($sql);
+        while ( $row = $db->fetch_record($result) )
+        {
+            $this->old_wrs_earned['wrs_earned'][$row['member_name']] = $row['wrs_earned'];
+        }
+    }
+    
+    /**
     * Determine this raid's value
     * 
     * @param $raid_name
@@ -780,17 +838,22 @@ class Add_Raid extends EQdkp_Admin
     * @param $members_array Array of members
     * @param $raid_id
     */
-    function add_attendees(&$members_array, $raid_id)
+    function add_attendees(&$members_array, &$wrs_earned, $raid_id, $raid_wrs_val)
     {
         global $db;
         
         $query = array();
         foreach ( $members_array as $member_name )
         {
-            $query[] = "($raid_id, '" . $member_name . "')";
+        	//Calculate earned_val here for each member.
+        	if (isset($wrs_earned[$member_name]))
+        		$earned_val = $wrs_earned[$member_name];
+        	else
+        		$earned_val = $raid_wrs_val;
+            $query[] = "($raid_id, '" . $member_name . "', $earned_val)";
         }
         
-        $sql = 'INSERT INTO ' . RAID_ATTENDEES_TABLE . ' (raid_id, member_name) 
+        $sql = 'INSERT INTO ' . RAID_ATTENDEES_TABLE . ' (raid_id, member_name, wrs_earned) 
                 VALUES ' . implode(', ', $query);
         $db->query($sql);
     }

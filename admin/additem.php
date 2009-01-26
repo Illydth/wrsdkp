@@ -378,15 +378,17 @@ class Add_Item extends EQdkp_Admin
         //
         $buyer_source = ( $this->url_id ) ? $this->item['item_buyers'] : (( isset($_POST['item_buyers']) ) ? $_POST['item_buyers'] : '');
         
-        $sql = 'SELECT member_name
+        $sql = 'SELECT member_name, member_earned, member_spent, member_adjustment
                 FROM ' . MEMBERS_TABLE . '
                 ORDER BY member_name';
         $result = $db->query($sql);
         while ( $row = $db->fetch_record($result) )
         {
+        	$dkp = $row['member_earned'] - $row['member_spent'] + $row['member_adjustment'];
             $tpl->assign_block_vars('members_row', array(
                 'VALUE'  => $row['member_name'],
-                'OPTION' => $row['member_name'])
+                'OPTION' => $row['member_name'],
+            	'DKP'	 => $dkp)
             );
             
             if ( @in_array($row['member_name'], $buyer_source) )
