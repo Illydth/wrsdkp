@@ -1017,9 +1017,9 @@ class CTRT_Import extends EQdkp_Admin
 								$dbMemberWRS = $this->GetMemberWrs($hlootdata['looter']);
 								$WRSVal = $this->CalcWRSValue($hlootdata['name'], $hlootdata['looter'], $itemDKPBase, $importCost, $dbMemberWRS);
 								if ($dbMemberWRS == -1)
-									$hraidattendees[$i]['WRS'] = $eventvalue - $WRSVal;
+									$hraidattendees[$i]['WRS'] = $itemDKPBase - $WRSVal;
 								else
-									$hraidattendees[$i]['WRS'] = $dbMemberWRS - $WRSVal + $eventvalue;
+									$hraidattendees[$i]['WRS'] = $dbMemberWRS - $WRSVal + $itemDKPBase;
 							}
  							else
  							{
